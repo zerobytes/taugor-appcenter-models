@@ -30,5 +30,8 @@
 	"bugs": {
 		"url": "https://github.com/zerobytes/taugor-auth-models/issues"
 	},
-	"homepage": "https://github.com/zerobytes/taugor-auth-models#readme"
+	"homepage": "https://github.com/zerobytes/taugor-auth-models#readme",
+	"dependencies": {
+		"@zerobytes/object-model-js": "0.0.8"
+	}
 }
