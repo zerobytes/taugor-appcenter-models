@@ -3,6 +3,10 @@ const ModelBase = omj.ModelBase;
 const FieldTypes = omj.FieldTypes;
 const validator = omj.Validator;
 
+const Company = require('./Company').default,
+	Group = require('./Group').default,
+	Permission = require('./Permission').default;
+
 const shapes = require('../shapes');
 
 /**
@@ -115,35 +119,24 @@ class User extends ModelBase {
 						.isOfType()
 						.isValid()
 			},
-			followersCount: {
-				type: FieldTypes.Integer,
+			companies: {
+				type: FieldTypes.ArrayOf(FieldTypes.IdOf(Company)),
 				validate: () =>
-					validator(this, 'followersCount')
+					validator(this, 'companies')
 						.isOfType()
 						.isValid()
 			},
-			followingCount: {
-				type: FieldTypes.Integer,
+			groups: {
+				type: FieldTypes.ArrayOf(FieldTypes.IdOf(Group)),
 				validate: () =>
-					validator(this, 'followingCount')
+					validator(this, 'groups')
 						.isOfType()
 						.isValid()
 			},
-			postsCount: {
-				type: FieldTypes.Integer,
+			permissions: {
+				type: FieldTypes.ArrayOf(FieldTypes.IdOf(Permission)),
 				validate: () =>
-					validator(this, 'postsCount')
-						.isOfType()
-						.isValid()
-			},
-			bio: {
-				type: FieldTypes.String,
-				validate: () => true
-			},
-			temporaryBalance: {
-				type: FieldTypes.Float,
-				validate: () =>
-					validator(this, 'temporaryBalance')
+					validator(this, 'permissions')
 						.isOfType()
 						.isValid()
 			}

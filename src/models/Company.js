@@ -3,6 +3,9 @@ const ModelBase = omj.ModelBase;
 const FieldTypes = omj.FieldTypes;
 const validator = omj.Validator;
 
+const Group = require('./Group').default,
+	App = require('./App').default;
+
 const shapes = require('../shapes');
 
 /**
@@ -141,6 +144,20 @@ class Company extends ModelBase {
 					type: FieldTypes.IdOf(Company),
 					validate: () =>
 						validator(this, 'parent')
+							.isOfType()
+							.isValid()
+				},
+				groups: {
+					type: FieldTypes.ArrayOf(FieldTypes.IdOf(Group)),
+					validate: () =>
+						validator(this, 'groups')
+							.isOfType()
+							.isValid()
+				},
+				apps: {
+					type: FieldTypes.ArrayOf(FieldTypes.IdOf(App)),
+					validate: () =>
+						validator(this, 'apps')
 							.isOfType()
 							.isValid()
 				}
