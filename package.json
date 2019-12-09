@@ -1,0 +1,34 @@
+{
+	"name": "@taugor/auth-models",
+	"version": "0.0.1",
+	"description": "Models package as common ground for authentication/authorisation.",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/zerobytes/taugor-auth-models.git"
+	},
+	"keywords": [
+		"taugor",
+		"corporation",
+		"models",
+		"package",
+		"set",
+		"common-ground",
+		"auth",
+		"authorization",
+		"authorisation"
+	],
+	"author": "Zerobyte",
+	"contributors": [
+		"guilherme.ferreira@zerobyte.app",
+		"bruno.teixeira.silva@gmail.com"
+	],
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/zerobytes/taugor-auth-models/issues"
+	},
+	"homepage": "https://github.com/zerobytes/taugor-auth-models#readme"
+}
