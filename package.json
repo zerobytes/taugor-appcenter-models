@@ -1,6 +1,6 @@
 {
 	"name": "@taugor/auth-models",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"description": "Models package as common ground for authentication/authorisation.",
 	"main": "dist/index.js",
 	"scripts": {
