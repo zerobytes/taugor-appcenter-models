@@ -1,11 +1,11 @@
 //Models for export
-const Company = require('./src/models/Company').default;
-const Group = require('./src/models/Group').default;
-const Permission = require('./src/models/Permission').default;
-const User = require('./src/models/User').default;
+const Company = require('./models/Company').default;
+const Group = require('./models/Group').default;
+const Permission = require('./models/Permission').default;
+const User = require('./models/User').default;
 
 //Shapes for export
-const shapes = require('./src/shapes');
+const shapes = require('./shapes');
 const billing = shapes.billing;
 const contactPerson = shapes.contactPerson;
 const locationAddress = shapes.locationAddress;
