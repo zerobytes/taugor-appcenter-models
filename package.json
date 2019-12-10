@@ -1,11 +1,11 @@
 {
 	"name": "@taugor/auth-models",
-	"version": "0.0.6",
+	"version": "0.0.7",
 	"description": "Models package as common ground for authentication/authorisation.",
-	"main": "src/index.js",
+	"main": "index.js",
 	"scripts": {
 		"prebuild": "rimraf ./dist",
-		"build": "npx babel 'src' --out-dir 'dist' --ignore node_modules"
+		"build": "npx babel . --out-dir 'dist' --ignore node_modules --copy-files"
 	},
 	"repository": {
 		"type": "git",
@@ -33,7 +33,7 @@
 	},
 	"homepage": "https://github.com/zerobytes/taugor-auth-models#readme",
 	"dependencies": {
-		"@zerobytes/object-model-js": "^0.1.0"
+		"@zerobytes/object-model-js": "^0.1.2"
 	},
 	"devDependencies": {
 		"@babel/cli": "^7.7.5",

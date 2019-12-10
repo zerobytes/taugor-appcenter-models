@@ -5,8 +5,6 @@ const validator = omj.Validator;
 
 const Company = require('./Company').default;
 
-const shapes = require('../shapes');
-
 /**
  * @type App
  * @property {string} name
