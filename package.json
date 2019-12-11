@@ -1,6 +1,6 @@
 {
 	"name": "@taugor/auth-models",
-	"version": "0.0.7",
+	"version": "0.0.8",
 	"description": "Models package as common ground for authentication/authorisation.",
 	"main": "index.js",
 	"scripts": {
@@ -27,13 +27,13 @@
 		"guilherme.ferreira@zerobyte.app",
 		"bruno.teixeira.silva@gmail.com"
 	],
-	"license": "ISC",
+	"license": "MIT",
 	"bugs": {
 		"url": "https://github.com/zerobytes/taugor-auth-models/issues"
 	},
 	"homepage": "https://github.com/zerobytes/taugor-auth-models#readme",
 	"dependencies": {
-		"@zerobytes/object-model-js": "^0.1.2"
+		"@zerobytes/object-model-js": "^0.1.6"
 	},
 	"devDependencies": {
 		"@babel/cli": "^7.7.5",
