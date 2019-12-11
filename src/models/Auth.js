@@ -9,6 +9,8 @@ const App = require('./App').default;
 
 /**
  * @type Auth
+ * @property {string} successorToken
+ * @property {boolean} expired
  * @property {string} userId
  * @property {string} companyid
  * @property {string} fromApp
@@ -20,6 +22,18 @@ class Auth extends ModelBase {
 		super('auth');
 
 		this.$fieldConfig = {
+			successorToken: {
+				type: FieldTypes.String,
+				validate: () => true
+			},
+			expired: {
+				type: FieldTypes.Boolean,
+				defaultValue: false,
+				validate: () =>
+					validator(this, 'expired')
+						.isOfType()
+						.isValid()
+			},
 			userId: {
 				type: FieldTypes.IdOf(User),
 				validate: () =>
