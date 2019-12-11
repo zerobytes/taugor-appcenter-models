@@ -1,4 +1,6 @@
 //Models for export
+const Auth = require('./src/models/Auth').default;
+const App = require('./src/models/App').default;
 const Company = require('./src/models/Company').default;
 const Group = require('./src/models/Group').default;
 const Permission = require('./src/models/Permission').default;
@@ -12,6 +14,8 @@ const locationAddress = shapes.locationAddress;
 const permissionReference = shapes.permissionReference;
 
 module.exports = {
+	Auth,
+	App,
 	Company,
 	Group,
 	Permission,

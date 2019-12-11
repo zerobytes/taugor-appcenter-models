@@ -21,11 +21,6 @@ const shapes = require('../shapes');
  * @property {string} phoneArea
  * @property {string} phoneCountry
  * @property {string} taxDocument
- * @property {number} followersCount
- * @property {number} followingCount
- * @property {number} postsCount
- * @property {string} bio
- * @property {number} temporaryBalance
  * @property {string} createdBy
  * @property {date} creationDate
  */
