@@ -16,6 +16,7 @@ const shapes = require('../shapes');
  * @property {string} provider
  * @property {array<any>} addresses
  * @property {string} birthdate
+ * @property {string} user
  * @property {string} email
  * @property {string} phone
  * @property {string} phoneArea
@@ -69,6 +70,15 @@ class User extends ModelBase {
 				type: FieldTypes.Date,
 				validate: () =>
 					validator(this, 'provider')
+						.isOfType()
+						.notEmpty()
+						.notNull()
+						.isValid()
+			},
+			user: {
+				type: FieldTypes.String,
+				validate: () =>
+					validator(this, 'user')
 						.isOfType()
 						.notEmpty()
 						.notNull()
