@@ -46,12 +46,7 @@ class Auth extends ModelBase {
 			},
 			companyId: {
 				type: FieldTypes.IdOf(Company),
-				validate: () =>
-					validator(this, 'companyId')
-						.notNull()
-						.notEmpty()
-						.isOfType()
-						.isValid()
+				validate: () => true
 			},
 			fromApp: {
 				type: FieldTypes.IdOf(App),

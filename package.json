@@ -1,6 +1,6 @@
 {
-	"name": "@taugor/auth-models",
-	"version": "0.1.0",
+	"name": "@taugor/app-center-models",
+	"version": "0.1.1",
 	"description": "Models package as common ground for authentication/authorisation.",
 	"main": "index.js",
 	"scripts": {
@@ -9,7 +9,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/zerobytes/taugor-auth-models.git"
+		"url": "git+https://github.com/zerobytes/taugor-app-center-models.git"
 	},
 	"keywords": [
 		"taugor",
@@ -29,9 +29,9 @@
 	],
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/zerobytes/taugor-auth-models/issues"
+		"url": "https://github.com/zerobytes/taugor-app-center-models/issues"
 	},
-	"homepage": "https://github.com/zerobytes/taugor-auth-models#readme",
+	"homepage": "https://github.com/zerobytes/taugor-app-center-models#readme",
 	"dependencies": {
 		"@zerobytes/object-model-js": "^0.1.6"
 	},
