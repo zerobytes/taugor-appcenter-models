@@ -6,6 +6,7 @@ const validator = omj.Validator;
 const User = require('./User').default;
 const Permission = require('./Permission').default;
 const PermissionReference = require('../shapes').permissionReference;
+const CompanyReference = require('../shapes').companyReference;
 
 /**
  * @type Group
@@ -14,6 +15,7 @@ const PermissionReference = require('../shapes').permissionReference;
  * @property {array<string>} tag
  * @property {array<User>} members
  * @property {array<PermissionReference>} permissions
+ * @property {CompanyReference} company
  * @property {string} createdBy
  * @property {date} creationDate
  */
@@ -67,6 +69,14 @@ class Group extends ModelBase {
 						.isOfType()
 						.notEmpty()
 						.notNull()
+						.isValid()
+			},
+			company: {
+				type: FieldTypes.ShapedAs(CompanyReference),
+				saveAs: (model) => new CompanyReference(model),
+				validate: () =>
+					validator(this, 'company')
+						.isOfType()
 						.isValid()
 			}
 		};
