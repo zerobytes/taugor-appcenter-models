@@ -9,6 +9,7 @@ const App = require('./App').default;
 
 /**
  * @type Auth
+ * @property {string} token
  * @property {string} successorToken
  * @property {boolean} expired
  * @property {string} userId
@@ -21,6 +22,17 @@ class Auth extends ModelBase {
 		super('auth');
 
 		this.$fieldConfig = {
+			token: {
+				type: FieldTypes.String,
+				minLength: 20,
+				validate: () =>
+					validator(this, 'token')
+						.isOfType()
+						.minLength()
+						.notEmpty()
+						.notNull()
+						.isValid()
+			},
 			successorToken: {
 				type: FieldTypes.String,
 				validate: () => true
