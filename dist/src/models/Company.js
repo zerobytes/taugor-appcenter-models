@@ -38,6 +38,8 @@ var shapes = require('../shapes');
  * @property {array}  contacts
  * @property {object} billing
  * @property {string} parent
+ * @property {array} groups
+ * @property {array} apps
  * @property {string} createdBy
  * @property {date} creationDate
  */

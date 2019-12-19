@@ -6,16 +6,16 @@ const validator = omj.Validator;
 const User = require('./User').default;
 const Permission = require('./Permission').default;
 const PermissionReference = require('../shapes').permissionReference;
-const CompanyReference = require('../shapes').companyReference;
+// const CompanyReference = require('../shapes').companyReference;
 
 /**
  * @type Group
  * @property {string} name
  * @property {string} description
  * @property {array<string>} tag
- * @property {array<User>} members
+ * @property {array<UserId>} members
  * @property {array<PermissionReference>} permissions
- * @property {CompanyReference} company
+ * @property {array<CompanyId>} company
  * @property {string} createdBy
  * @property {date} creationDate
  */
@@ -52,12 +52,10 @@ class Group extends ModelBase {
 						.isValid()
 			},
 			members: {
-				type: FieldTypes.ArrayOf(User),
+				type: FieldTypes.ArrayOf(FieldTypes.IdOf(User)),
 				validate: () =>
 					validator(this, 'members')
 						.isOfType()
-						.notEmpty()
-						.notNull()
 						.isValid()
 			},
 			permissions: {
@@ -72,11 +70,14 @@ class Group extends ModelBase {
 						.isValid()
 			},
 			company: {
-				type: FieldTypes.ShapedAs(CompanyReference),
-				saveAs: (model) => new CompanyReference(model),
+				type: FieldTypes.IdOf(Company),
+				//TODO: implement final saving format
+				//saveAs: (model) => new CompanyReference(model),
 				validate: () =>
 					validator(this, 'company')
 						.isOfType()
+						.notEmpty()
+						.notNull()
 						.isValid()
 			}
 		};

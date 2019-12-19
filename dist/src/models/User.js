@@ -32,16 +32,12 @@ var shapes = require('../shapes');
  * @property {string} provider
  * @property {array<any>} addresses
  * @property {string} birthdate
+ * @property {string} user
  * @property {string} email
  * @property {string} phone
  * @property {string} phoneArea
  * @property {string} phoneCountry
  * @property {string} taxDocument
- * @property {number} followersCount
- * @property {number} followingCount
- * @property {number} postsCount
- * @property {string} bio
- * @property {number} temporaryBalance
  * @property {string} createdBy
  * @property {date} creationDate
  */
@@ -89,6 +85,12 @@ function (_ModelBase) {
         type: FieldTypes.Date,
         validate: function validate() {
           return validator(_assertThisInitialized(_this), 'provider').isOfType().notEmpty().notNull().isValid();
+        }
+      },
+      user: {
+        type: FieldTypes.String,
+        validate: function validate() {
+          return validator(_assertThisInitialized(_this), 'user').isOfType().notEmpty().notNull().isValid();
         }
       },
       email: {

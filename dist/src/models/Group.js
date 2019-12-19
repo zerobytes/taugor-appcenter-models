@@ -24,14 +24,16 @@ var User = require('./User')["default"];
 
 var Permission = require('./Permission')["default"];
 
-var PermissionReference = require('../shapes').permissionReference;
+var PermissionReference = require('../shapes').permissionReference; // const CompanyReference = require('../shapes').companyReference;
+
 /**
  * @type Group
  * @property {string} name
  * @property {string} description
  * @property {array<string>} tag
- * @property {array<User>} members
+ * @property {array<UserId>} members
  * @property {array<PermissionReference>} permissions
+ * @property {array<CompanyId>} company
  * @property {string} createdBy
  * @property {date} creationDate
  */
@@ -70,9 +72,9 @@ function (_ModelBase) {
         }
       },
       members: {
-        type: FieldTypes.ArrayOf(User),
+        type: FieldTypes.ArrayOf(FieldTypes.IdOf(User)),
         validate: function validate() {
-          return validator(_assertThisInitialized(_this), 'members').isOfType().notEmpty().notNull().isValid();
+          return validator(_assertThisInitialized(_this), 'members').isOfType().isValid();
         }
       },
       permissions: {
@@ -83,6 +85,14 @@ function (_ModelBase) {
         },
         validate: function validate() {
           return validator(_assertThisInitialized(_this), 'permissions').isOfType().notEmpty().notNull().isValid();
+        }
+      },
+      company: {
+        type: FieldTypes.IdOf(Company),
+        //TODO: implement final saving format
+        //saveAs: (model) => new CompanyReference(model),
+        validate: function validate() {
+          return validator(_assertThisInitialized(_this), 'company').isOfType().notEmpty().notNull().isValid();
         }
       }
     };

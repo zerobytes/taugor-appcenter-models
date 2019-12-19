@@ -20,74 +20,77 @@ var ModelBase = omj.ModelBase;
 var FieldTypes = omj.FieldTypes;
 var validator = omj.Validator;
 
+var User = require('./User')["default"];
+
 var Company = require('./Company')["default"];
 
-var shapes = require('../shapes');
+var App = require('./App')["default"];
 /**
- * @type App
- * @property {string} name
- * @property {string} description
- * @property {string} mainUrl
- * @property {string[]} companies
+ * @type Auth
+ * @property {string} token
+ * @property {string} successorToken
+ * @property {boolean} expired
+ * @property {string} userId
+ * @property {string} fromApp
  * @property {string} createdBy
  * @property {date} creationDate
  */
 
 
-var App =
+var Auth =
 /*#__PURE__*/
 function (_ModelBase) {
-  _inherits(App, _ModelBase);
+  _inherits(Auth, _ModelBase);
 
-  function App() {
+  function Auth() {
     var _this;
 
     var properties = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
 
-    _classCallCheck(this, App);
+    _classCallCheck(this, Auth);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(App).call(this, 'company'));
-
-    try {
-      _this.$fieldConfig = {
-        name: {
-          type: FieldTypes.String,
-          minLength: 2,
-          validate: function validate() {
-            return validator(_assertThisInitialized(_this), 'name').isOfType().minLength().notEmpty().notNull().isValid();
-          }
-        },
-        description: {
-          type: FieldTypes.String,
-          minLength: 4,
-          validate: function validate() {
-            return validator(_assertThisInitialized(_this), 'description').isOfType().minLength().isValid();
-          }
-        },
-        mainUrl: {
-          type: FieldTypes.String,
-          minLengh: 6,
-          validate: function validate() {
-            return validator(_assertThisInitialized(_this), 'mainUrl').isOfType().notEmpty().notNull().minLength().isValid();
-          }
-        },
-        companies: {
-          type: FieldTypes.ArrayOf(FieldTypes.IdOf(Company)),
-          validate: function validate() {
-            return validator(_assertThisInitialized(_this), 'companies').isOfType().isValid();
-          }
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Auth).call(this, 'auth'));
+    _this.$fieldConfig = {
+      token: {
+        type: FieldTypes.String,
+        minLength: 20,
+        validate: function validate() {
+          return validator(_assertThisInitialized(_this), 'token').isOfType().minLength().notEmpty().notNull().isValid();
         }
-      };
-    } catch (e) {
-      console.log(e);
-    }
+      },
+      successorToken: {
+        type: FieldTypes.String,
+        validate: function validate() {
+          return true;
+        }
+      },
+      expired: {
+        type: FieldTypes.Boolean,
+        defaultValue: false,
+        validate: function validate() {
+          return true;
+        }
+      },
+      userId: {
+        type: FieldTypes.IdOf(User),
+        validate: function validate() {
+          return validator(_assertThisInitialized(_this), 'userId').isOfType().minLength().notEmpty().notNull().isValid();
+        }
+      },
+      fromApp: {
+        type: FieldTypes.IdOf(App),
+        validate: function validate() {
+          return validator(_assertThisInitialized(_this), 'fromApp').notNull().notEmpty().isOfType().isValid();
+        }
+      }
+    };
 
     _this.$fill(properties);
 
     return _this;
   }
 
-  return App;
+  return Auth;
 }(ModelBase);
 
-exports["default"] = App;
+exports["default"] = Auth;
