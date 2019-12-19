@@ -24,8 +24,9 @@ var User = require('./User')["default"];
 
 var Permission = require('./Permission')["default"];
 
-var PermissionReference = require('../shapes').permissionReference; // const CompanyReference = require('../shapes').companyReference;
+var Company = require('./Company')["default"];
 
+var PermissionReference = require('../shapes').permissionReference;
 /**
  * @type Group
  * @property {string} name

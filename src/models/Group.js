@@ -5,8 +5,8 @@ const validator = omj.Validator;
 
 const User = require('./User').default;
 const Permission = require('./Permission').default;
+const Company = require('./Company').default;
 const PermissionReference = require('../shapes').permissionReference;
-// const CompanyReference = require('../shapes').companyReference;
 
 /**
  * @type Group
