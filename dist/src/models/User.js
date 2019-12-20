@@ -99,6 +99,12 @@ function (_ModelBase) {
           return validator(_assertThisInitialized(_this), 'email').isOfType().notEmpty().notNull().email().isValid();
         }
       },
+      taxDocument: {
+        type: FieldTypes.String,
+        validate: function validate() {
+          return validator(_assertThisInitialized(_this), 'taxDocument').isOfType().isValid();
+        }
+      },
       phoneCountry: {
         type: FieldTypes.String,
         validate: function validate() {
@@ -115,12 +121,6 @@ function (_ModelBase) {
         type: FieldTypes.String,
         validate: function validate() {
           return validator(_assertThisInitialized(_this), 'phone').isOfType().notEmpty().notNull().isValid();
-        }
-      },
-      taxDocument: {
-        type: FieldTypes.String,
-        validate: function validate() {
-          return validator(_assertThisInitialized(_this), 'taxDocument').isOfType().isValid();
         }
       },
       companies: {

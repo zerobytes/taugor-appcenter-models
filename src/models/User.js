@@ -94,6 +94,13 @@ class User extends ModelBase {
 						.email()
 						.isValid()
 			},
+			taxDocument: {
+				type: FieldTypes.String,
+				validate: () =>
+					validator(this, 'taxDocument')
+						.isOfType()
+						.isValid()
+			},
 			phoneCountry: {
 				type: FieldTypes.String,
 				validate: () =>
@@ -115,13 +122,6 @@ class User extends ModelBase {
 						.isOfType()
 						.notEmpty()
 						.notNull()
-						.isValid()
-			},
-			taxDocument: {
-				type: FieldTypes.String,
-				validate: () =>
-					validator(this, 'taxDocument')
-						.isOfType()
 						.isValid()
 			},
 			companies: {
