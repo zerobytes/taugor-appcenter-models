@@ -54,6 +54,13 @@ class User extends ModelBase {
 						.notNull()
 						.isValid()
 			},
+			taxDocument: {
+				type: FieldTypes.String,
+				validate: () =>
+					validator(this, 'taxDocument')
+						.isOfType()
+						.isValid()
+			},
 			provider: {
 				type: FieldTypes.String,
 				validate: () =>
@@ -110,6 +117,7 @@ class User extends ModelBase {
 			},
 			password: {
 				type: FieldTypes.String,
+				protected: true,
 				transform: (model, value) => pwdHash(value, model.salt),
 				validate: () =>
 					validator(this, 'email')
@@ -122,6 +130,8 @@ class User extends ModelBase {
 			salt: {
 				//TODO: implement hidden field function
 				type: FieldTypes.String,
+				//protected: true,
+				hidden: true,
 				defaultValue: generateSalt(10),
 				// transform: (model, value) => {},
 				validate: () =>
@@ -130,13 +140,6 @@ class User extends ModelBase {
 						.notEmpty()
 						.notNull()
 						.email()
-						.isValid()
-			},
-			taxDocument: {
-				type: FieldTypes.String,
-				validate: () =>
-					validator(this, 'taxDocument')
-						.isOfType()
 						.isValid()
 			},
 			phoneCountry: {
