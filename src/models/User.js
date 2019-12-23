@@ -137,13 +137,6 @@ class User extends ModelBase {
 					validator(this, 'groups')
 						.isOfType()
 						.isValid()
-			},
-			permissions: {
-				type: FieldTypes.ArrayOf(FieldTypes.IdOf(Permission)),
-				validate: () =>
-					validator(this, 'permissions')
-						.isOfType()
-						.isValid()
 			}
 		};
 
