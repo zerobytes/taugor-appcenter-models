@@ -9,6 +9,7 @@ const Company = require('./Company').default,
 /**
  * @type App
  * @property {string} name
+ * @property {string} code
  * @property {string} description
  * @property {string} mainUrl
  * @property {string[]} companies
@@ -25,6 +26,17 @@ class App extends ModelBase {
 				minLength: 2,
 				validate: () =>
 					validator(this, 'name')
+						.isOfType()
+						.minLength()
+						.notEmpty()
+						.notNull()
+						.isValid()
+			},
+			code: {
+				type: FieldTypes.String,
+				minLength: 1,
+				validate: () =>
+					validator(this, 'code')
 						.isOfType()
 						.minLength()
 						.notEmpty()
