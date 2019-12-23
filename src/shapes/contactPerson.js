@@ -12,8 +12,8 @@ const ShapeBase = omj.ShapeBase;
  * @property {FieldTypes.String} website
  */
 class ContactPerson extends ShapeBase {
-	constructor() {
-		super();
+	constructor(data = null) {
+		super(data);
 		this.name = '';
 		this.phoneNumber = '';
 		this.email = '';

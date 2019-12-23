@@ -5,9 +5,8 @@ const validator = omj.Validator;
 
 const Company = require('./Company').default,
 	Group = require('./Group').default,
-	Permission = require('./Permission').default;
-
-const shapes = require('../shapes');
+	shapes = require('../shapes'),
+	CompanyReference = shapes.companyReference;
 
 /**
  * @type User
@@ -125,7 +124,8 @@ class User extends ModelBase {
 						.isValid()
 			},
 			companies: {
-				type: FieldTypes.ArrayOf(FieldTypes.IdOf(Company)),
+				type: FieldTypes.ArrayOf(Company),
+				saveAs: (model) => new CompanyReference(model),
 				validate: () =>
 					validator(this, 'companies')
 						.isOfType()

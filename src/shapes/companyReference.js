@@ -9,8 +9,8 @@ const ShapeBase = omj.ShapeBase;
  * @property {FieldTypes.String} code
  */
 class CompanyReference extends ShapeBase {
-	constructor() {
-		super();
+	constructor(data = null) {
+		super(data);
 		this.uid = '';
 		this.code = '';
 		this.$fieldConfig = {
