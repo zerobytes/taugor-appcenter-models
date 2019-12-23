@@ -1,4 +1,6 @@
 const omj = require('@zerobytes/object-model-js');
+const generateSalt = omj.generateSalt;
+const pwdHash = omj.pwdHash;
 const ModelBase = omj.ModelBase;
 const FieldTypes = omj.FieldTypes;
 const validator = omj.Validator;
@@ -17,10 +19,15 @@ const Company = require('./Company').default,
  * @property {string} birthdate
  * @property {string} user
  * @property {string} email
- * @property {string} phone
- * @property {string} phoneArea
- * @property {string} phoneCountry
+ * @property {boolean} emailVerified
+ * @property {string} password
+ * @property {string} salt
  * @property {string} taxDocument
+ * @property {string} phoneCountry
+ * @property {string} phoneArea
+ * @property {string} phone
+ * @property {array<CompanyReference>} companies
+ * @property {array<string>} groups
  * @property {string} createdBy
  * @property {date} creationDate
  */
@@ -93,6 +100,38 @@ class User extends ModelBase {
 						.email()
 						.isValid()
 			},
+			emailVerified: {
+				type: FieldTypes.Boolean,
+				defaultValue: false,
+				validate: () =>
+					validator(this, 'emailVerified')
+						.isOfType()
+						.isValid()
+			},
+			password: {
+				type: FieldTypes.String,
+				transform: (model, value) => pwdHash(value, model.salt),
+				validate: () =>
+					validator(this, 'email')
+						.isOfType()
+						.notEmpty()
+						.notNull()
+						.email()
+						.isValid()
+			},
+			salt: {
+				//TODO: implement hidden field function
+				type: FieldTypes.String,
+				defaultValue: generateSalt(10),
+				// transform: (model, value) => {},
+				validate: () =>
+					validator(this, 'email')
+						.isOfType()
+						.notEmpty()
+						.notNull()
+						.email()
+						.isValid()
+			},
 			taxDocument: {
 				type: FieldTypes.String,
 				validate: () =>
@@ -125,7 +164,7 @@ class User extends ModelBase {
 			},
 			companies: {
 				type: FieldTypes.ArrayOf(Company),
-				saveAs: (model) => new CompanyReference(model),
+				transform: (model, value) => value.map((item) => new CompanyReference(item)),
 				validate: () =>
 					validator(this, 'companies')
 						.isOfType()

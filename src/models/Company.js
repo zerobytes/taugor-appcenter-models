@@ -171,7 +171,7 @@ class Company extends ModelBase {
 			},
 			apps: {
 				type: FieldTypes.ArrayOf(App),
-				saveAs: (model) => AppReference(model),
+				transform: (model, value) => value.map((item) => new AppReference(item)),
 				validate: () =>
 					validator(this, 'apps')
 						.isOfType()

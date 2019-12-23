@@ -61,7 +61,7 @@ class Group extends ModelBase {
 			permissions: {
 				type: FieldTypes.ArrayOf(Permission),
 				//TODO: implement final saving format
-				saveAs: (model) => new PermissionReference(model),
+				transform: (model, value) => value.map((item) => new PermissionReference(item)),
 				validate: () =>
 					validator(this, 'permissions')
 						.isOfType()
