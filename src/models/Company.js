@@ -82,7 +82,6 @@ class Company extends ModelBase {
 				validate: () =>
 					validator(this, 'address')
 						.isOfType()
-
 						.notEmpty()
 						.notNull()
 						.minLength()
@@ -125,7 +124,6 @@ class Company extends ModelBase {
 					validator(this, 'secondaryEmail')
 						.isOfType()
 						.email()
-						.minLength()
 						.isValid()
 			},
 			website: {
@@ -134,7 +132,6 @@ class Company extends ModelBase {
 					validator(this, 'website')
 						.isOfType()
 						.website()
-						.minLength()
 						.isValid()
 			},
 			contacts: {
@@ -142,8 +139,6 @@ class Company extends ModelBase {
 				validate: () =>
 					validator(this, 'contacts')
 						.isOfType()
-						.notEmpty()
-						.notNull()
 						.isValid()
 			},
 			billing: {
@@ -151,8 +146,6 @@ class Company extends ModelBase {
 				validate: () =>
 					validator(this, 'billing')
 						.isOfType()
-						.notEmpty()
-						.notNull()
 						.isValid()
 			},
 			parent: {
