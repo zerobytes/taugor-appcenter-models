@@ -150,25 +150,25 @@ class Company extends ModelBase {
 			},
 			parent: {
 				type: FieldTypes.IdOf(Company),
-				validate: () =>
-					validator(this, 'parent')
-						.isOfType()
-						.isValid()
+				validate: () => true
+				// validator(this, 'parent')
+				// 	.isOfType()
+				// 	.isValid()
 			},
 			groups: {
 				type: FieldTypes.ArrayOf(FieldTypes.IdOf(Group)),
-				validate: () =>
-					validator(this, 'groups')
-						.isOfType()
-						.isValid()
+				validate: () => true
+				// validator(this, 'groups')
+				// 	.isOfType()
+				// 	.isValid()
 			},
 			apps: {
 				type: FieldTypes.ArrayOf(App),
 				transform: (model, value) => value.map((item) => new AppReference(item)),
-				validate: () =>
-					validator(this, 'apps')
-						.isOfType()
-						.isValid()
+				validate: () => true
+				// validator(this, 'apps')
+				// 	.isOfType()
+				// 	.isValid()
 			}
 		};
 
