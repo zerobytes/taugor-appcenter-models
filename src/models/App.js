@@ -3,7 +3,7 @@ const ModelBase = omj.ModelBase;
 const FieldTypes = omj.FieldTypes;
 const validator = omj.Validator;
 
-const Company = require('./Company').default;
+const Company = require('./Company');
 
 /**
  * @type App

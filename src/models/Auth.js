@@ -4,7 +4,6 @@ const FieldTypes = omj.FieldTypes;
 const validator = omj.Validator;
 
 const User = require('./User').default;
-const Company = require('./Company').default;
 const App = require('./App').default;
 
 /**

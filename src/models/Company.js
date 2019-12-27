@@ -175,4 +175,4 @@ class Company extends ModelBase {
 	}
 }
 
-exports.default = Company;
+module.exports = Company;

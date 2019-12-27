@@ -5,7 +5,7 @@ const validator = omj.Validator;
 
 const User = require('./User').default;
 const Permission = require('./Permission').default;
-const Company = require('./Company').default;
+const Company = require('./Company');
 
 /**
  * @type Group
