@@ -6,7 +6,6 @@ const validator = omj.Validator;
 const User = require('./User').default;
 const Permission = require('./Permission').default;
 const Company = require('./Company').default;
-const PermissionReference = require('../shapes').permissionReference;
 
 /**
  * @type Group
@@ -59,9 +58,9 @@ class Group extends ModelBase {
 						.isValid()
 			},
 			permissions: {
-				type: FieldTypes.ArrayOf(Permission),
+				type: FieldTypes.ArrayOf(FieldTypes.IdOf(Permission)),
 				//TODO: implement final saving format
-				transform: (model, value) => value.map((item) => new PermissionReference(item)),
+				// transform: (model, value) => value.map((item) => new PermissionReference(item)),
 				validate: () =>
 					validator(this, 'permissions')
 						.isOfType()
@@ -71,8 +70,6 @@ class Group extends ModelBase {
 			},
 			company: {
 				type: FieldTypes.IdOf(Company),
-				//TODO: implement final saving format
-				//saveAs: (model) => new CompanyReference(model),
 				validate: () =>
 					validator(this, 'company')
 						.isOfType()
