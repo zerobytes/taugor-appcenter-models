@@ -5,7 +5,7 @@ const ModelBase = omj.ModelBase;
 const FieldTypes = omj.FieldTypes;
 const validator = omj.Validator;
 
-const Company = require('./Company'),
+const Company = require('./Company').default,
 	Group = require('./Group').default,
 	shapes = require('../shapes');
 

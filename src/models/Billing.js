@@ -4,7 +4,7 @@ const FieldTypes = omj.FieldTypes;
 const validator = omj.Validator;
 
 const App = require('./App').default,
-	Company = require('./Company');
+	Company = require('./Company').default;
 
 /**
  * @type Billing
