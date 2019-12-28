@@ -64,8 +64,6 @@ class Group extends ModelBase {
 				validate: () =>
 					validator(this, 'permissions')
 						.isOfType()
-						.notEmpty()
-						.notNull()
 						.isValid()
 			},
 			company: {
@@ -73,8 +71,6 @@ class Group extends ModelBase {
 				validate: () =>
 					validator(this, 'company')
 						.isOfType()
-						.notEmpty()
-						.notNull()
 						.isValid()
 			}
 		};
