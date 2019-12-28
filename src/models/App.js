@@ -62,6 +62,13 @@ class App extends ModelBase {
 						.minLength()
 						.isValid()
 			},
+			cp: {
+				type: FieldTypes.ArrayOf(FieldTypes.IdOf(Company)),
+				validate: () =>
+					validator(this, 'companies')
+						.isOfType()
+						.isValid()
+			},
 			companies: {
 				type: FieldTypes.ArrayOf(FieldTypes.IdOf(Company)),
 				// transform: (model, value) => value.map((item) => new CompanyReference(item)),
