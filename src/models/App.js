@@ -3,7 +3,7 @@ const ModelBase = omj.ModelBase;
 const FieldTypes = omj.FieldTypes;
 const validator = omj.Validator;
 
-const Company = require('./Company').default;
+// const Company = require('./Company').default;
 
 /**
  * @type App
@@ -11,7 +11,7 @@ const Company = require('./Company').default;
  * @property {string} code
  * @property {string} description
  * @property {string} mainUrl
- * @property {string[]} companies
+//  * @property {string[]} companies
  * @property {string} createdBy
  * @property {date} creationDate
  */
@@ -61,22 +61,22 @@ class App extends ModelBase {
 						.notNull()
 						.minLength()
 						.isValid()
-			},
-			cp: {
-				type: FieldTypes.ArrayOf(FieldTypes.IdOf(Company)),
-				validate: () =>
-					validator(this, 'companies')
-						.isOfType()
-						.isValid()
-			},
-			companies: {
-				type: FieldTypes.ArrayOf(FieldTypes.IdOf(Company)),
-				// transform: (model, value) => value.map((item) => new CompanyReference(item)),
-				validate: () =>
-					validator(this, 'companies')
-						.isOfType()
-						.isValid()
 			}
+			// cp: {
+			// 	type: FieldTypes.ArrayOf(FieldTypes.IdOf(Company)),
+			// 	validate: () =>
+			// 		validator(this, 'cp')
+			// 			.isOfType()
+			// 			.isValid()
+			// },
+			// companies: {
+			// 	type: FieldTypes.ArrayOf(FieldTypes.IdOf(Company)),
+			// 	// transform: (model, value) => value.map((item) => new CompanyReference(item)),
+			// 	validate: () =>
+			// 		validator(this, 'companies')
+			// 			.isOfType()
+			// 			.isValid()
+			// }
 		};
 
 		this.$fill(properties);
