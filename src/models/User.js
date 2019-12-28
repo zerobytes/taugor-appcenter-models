@@ -63,11 +63,10 @@ class User extends ModelBase {
 			},
 			provider: {
 				type: FieldTypes.String,
+				defaultValue: 'email',
 				validate: () =>
 					validator(this, 'provider')
 						.isOfType()
-						.notEmpty()
-						.notNull()
 						.isValid()
 			},
 			addresses: {
@@ -75,8 +74,6 @@ class User extends ModelBase {
 				validate: () =>
 					validator(this, 'addresses')
 						.isOfType()
-						.notNull()
-						.notEmpty()
 						.isValid()
 			},
 			birthdate: {
@@ -120,11 +117,10 @@ class User extends ModelBase {
 				protected: true,
 				transform: (model, value) => pwdHash(value, model.salt),
 				validate: () =>
-					validator(this, 'email')
+					validator(this, 'password')
 						.isOfType()
 						.notEmpty()
 						.notNull()
-						.email()
 						.isValid()
 			},
 			salt: {
@@ -135,11 +131,8 @@ class User extends ModelBase {
 				defaultValue: generateSalt(10),
 				// transform: (model, value) => {},
 				validate: () =>
-					validator(this, 'email')
+					validator(this, 'salt')
 						.isOfType()
-						.notEmpty()
-						.notNull()
-						.email()
 						.isValid()
 			},
 			superadmin: {
@@ -170,8 +163,6 @@ class User extends ModelBase {
 				validate: () =>
 					validator(this, 'phone')
 						.isOfType()
-						.notEmpty()
-						.notNull()
 						.isValid()
 			},
 			companies: {
