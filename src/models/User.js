@@ -71,10 +71,10 @@ class User extends ModelBase {
 			},
 			addresses: {
 				type: FieldTypes.ArrayOf(FieldTypes.ShapedAs(shapes.locationAddress)),
-				validate: () =>
-					validator(this, 'addresses')
-						.isOfType()
-						.isValid()
+				validate: () => true
+				// validator(this, 'addresses')
+				// 	.isOfType()
+				// 	.isValid()
 			},
 			birthdate: {
 				type: FieldTypes.Date,
@@ -168,17 +168,17 @@ class User extends ModelBase {
 			companies: {
 				type: FieldTypes.ArrayOf(FieldTypes.IdOf(Company)),
 				// transform: (model, value) => value.map((item) => new CompanyReference(item)),
-				validate: () =>
-					validator(this, 'companies')
-						.isOfType()
-						.isValid()
+				validate: () => true
+				// validator(this, 'companies')
+				// 	.isOfType()
+				// 	.isValid()
 			},
 			groups: {
 				type: FieldTypes.ArrayOf(FieldTypes.IdOf(Group)),
-				validate: () =>
-					validator(this, 'groups')
-						.isOfType()
-						.isValid()
+				validate: () => true
+				// validator(this, 'groups')
+				// 	.isOfType()
+				// 	.isValid()
 			}
 		};
 
