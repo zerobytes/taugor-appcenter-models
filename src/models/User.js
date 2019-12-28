@@ -13,6 +13,7 @@ const Company = require('./Company').default,
  * @type User
  * @property {string} firstName
  * @property {string} lastName
+ * @property {string} taxDocument
  * @property {string} provider
  * @property {array<any>} addresses
  * @property {string} birthdate
@@ -21,7 +22,7 @@ const Company = require('./Company').default,
  * @property {boolean} emailVerified
  * @property {string} password
  * @property {string} salt
- * @property {string} taxDocument
+ * @property {boolean} superadmin
  * @property {string} phoneCountry
  * @property {string} phoneArea
  * @property {string} phone
@@ -139,6 +140,15 @@ class User extends ModelBase {
 						.notEmpty()
 						.notNull()
 						.email()
+						.isValid()
+			},
+			superadmin: {
+				type: FieldTypes.Boolean,
+				protected: true,
+				defaultValue: false,
+				validate: () =>
+					validator(this, 'superadmin')
+						.isOfType()
 						.isValid()
 			},
 			phoneCountry: {
