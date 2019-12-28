@@ -108,7 +108,7 @@ class User extends ModelBase {
 			password: {
 				type: FieldTypes.String,
 				protected: true,
-				transform: (model, value) => pwdHash(value, model.salt),
+				// transform: (model, value) => pwdHash(value, model.salt),
 				validate: () =>
 					validator(this, 'password')
 						.isOfType()
