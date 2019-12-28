@@ -69,13 +69,6 @@ class User extends ModelBase {
 						.isOfType()
 						.isValid()
 			},
-			addresses: {
-				type: FieldTypes.ArrayOf(FieldTypes.ShapedAs(shapes.locationAddress)),
-				validate: () => true
-				// validator(this, 'addresses')
-				// 	.isOfType()
-				// 	.isValid()
-			},
 			birthdate: {
 				type: FieldTypes.Date,
 				validate: () =>
@@ -162,6 +155,13 @@ class User extends ModelBase {
 				type: FieldTypes.String,
 				validate: () =>
 					validator(this, 'phone')
+						.isOfType()
+						.isValid()
+			},
+			addresses: {
+				type: FieldTypes.ArrayOf(FieldTypes.ShapedAs(shapes.locationAddress)),
+				validate: () =>
+					validator(this, 'addresses')
 						.isOfType()
 						.isValid()
 			},
