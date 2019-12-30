@@ -159,6 +159,7 @@ class User extends ModelBase {
 			},
 			addresses: {
 				type: FieldTypes.ArrayOf(FieldTypes.ShapedAs(shapes.locationAddress)),
+				defaultValue: [],
 				validate: () =>
 					validator(this, 'addresses')
 						.isOfType()
@@ -166,6 +167,7 @@ class User extends ModelBase {
 			},
 			companies: {
 				type: FieldTypes.ArrayOf(FieldTypes.IdOf(Company)),
+				defaultValue: [],
 				// transform: (model, value) => value.map((item) => new CompanyReference(item)),
 				validate: () => true
 				// validator(this, 'companies')
@@ -174,6 +176,7 @@ class User extends ModelBase {
 			},
 			groups: {
 				type: FieldTypes.ArrayOf(FieldTypes.IdOf(Group)),
+				defaultValue: [],
 				validate: () => true
 				// validator(this, 'groups')
 				// 	.isOfType()

@@ -33,6 +33,17 @@ class Company extends ModelBase {
 		super('company');
 
 		this.$fieldConfig = {
+			identificationNumber: {
+				type: FieldTypes.String,
+				minLengh: 10,
+				validate: () =>
+					validator(this, 'identificationNumber')
+						.isOfType()
+						.notEmpty()
+						.notNull()
+						.minLength()
+						.isValid()
+			},
 			name: {
 				type: FieldTypes.String,
 				minLength: 3,
@@ -61,17 +72,6 @@ class Company extends ModelBase {
 				validate: () =>
 					validator(this, 'description')
 						.isOfType()
-						.minLength()
-						.isValid()
-			},
-			identificationNumber: {
-				type: FieldTypes.String,
-				minLengh: 10,
-				validate: () =>
-					validator(this, 'identificationNumber')
-						.isOfType()
-						.notEmpty()
-						.notNull()
 						.minLength()
 						.isValid()
 			},
@@ -135,6 +135,7 @@ class Company extends ModelBase {
 			},
 			contacts: {
 				type: FieldTypes.ArrayOf(FieldTypes.ShapedAs(shapes.contactPerson)),
+				defaultValue: [],
 				validate: () =>
 					validator(this, 'contacts')
 						.isOfType()
@@ -156,6 +157,7 @@ class Company extends ModelBase {
 			},
 			groups: {
 				type: FieldTypes.ArrayOf(FieldTypes.IdOf(Group)),
+				defaultValue: [],
 				validate: () => true
 				// validator(this, 'groups')
 				// 	.isOfType()
@@ -163,6 +165,7 @@ class Company extends ModelBase {
 			},
 			apps: {
 				type: FieldTypes.ArrayOf(FieldTypes.IdOf(App)),
+				defaultValue: [],
 				// transform: (model, value) => value.map((item) => new AppReference(item)),
 				validate: () => true
 				// validator(this, 'apps')
