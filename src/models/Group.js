@@ -43,28 +43,31 @@ class Group extends ModelBase {
 			},
 			tag: {
 				type: FieldTypes.ArrayOf(FieldTypes.String),
-				validate: () =>
-					validator(this, 'tag')
-						.isOfType()
-						.notEmpty()
-						.notNull()
-						.isValid()
+				defaultValue: [],
+				validate: () => true
+				// validator(this, 'tag')
+				// 	.isOfType()
+				// 	.notEmpty()
+				// 	.notNull()
+				// 	.isValid()
 			},
 			members: {
 				type: FieldTypes.ArrayOf(FieldTypes.IdOf(User)),
-				validate: () =>
-					validator(this, 'members')
-						.isOfType()
-						.isValid()
+				defaultValue: [],
+				validate: () => true
+				// validator(this, 'members')
+				// 	.isOfType()
+				// 	.isValid()
 			},
 			permissions: {
 				type: FieldTypes.ArrayOf(FieldTypes.IdOf(Permission)),
 				//TODO: implement final saving format
 				// transform: (model, value) => value.map((item) => new PermissionReference(item)),
-				validate: () =>
-					validator(this, 'permissions')
-						.isOfType()
-						.isValid()
+				defaultValue: [],
+				validate: () => true
+				// validator(this, 'permissions')
+				// 	.isOfType()
+				// 	.isValid()
 			},
 			company: {
 				type: FieldTypes.IdOf(Company),

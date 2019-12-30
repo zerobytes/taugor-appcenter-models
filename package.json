@@ -1,6 +1,6 @@
 {
 	"name": "@taugor/appcenter-models",
-	"version": "0.1.37",
+	"version": "0.1.38",
 	"description": "Models package as common ground for authentication/authorisation.",
 	"main": "index.js",
 	"scripts": {
@@ -33,7 +33,7 @@
 	},
 	"homepage": "https://github.com/zerobytes/taugor-appcenter-models#readme",
 	"dependencies": {
-		"@zerobytes/object-model-js": "^0.3.2"
+		"@zerobytes/object-model-js": "^0.3.4"
 	},
 	"devDependencies": {
 		"@babel/cli": "^7.7.7",
