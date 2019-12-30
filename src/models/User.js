@@ -1,6 +1,5 @@
 const omj = require('@zerobytes/object-model-js');
 const generateSalt = omj.generateSalt;
-const pwdHash = omj.pwdHash;
 const ModelBase = omj.ModelBase;
 const FieldTypes = omj.FieldTypes;
 const validator = omj.Validator;
