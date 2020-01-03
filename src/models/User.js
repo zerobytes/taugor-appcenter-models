@@ -81,22 +81,26 @@ class User extends ModelBase {
 			},
 			user: {
 				type: FieldTypes.String,
+				minLength: 3,
 				order: true,
 				validate: () =>
 					validator(this, 'user')
 						.isOfType()
 						.notEmpty()
 						.notNull()
+						.minLength()
 						.isValid()
 			},
 			email: {
 				type: FieldTypes.String,
+				minLength: 5,
 				order: true,
 				validate: () =>
 					validator(this, 'email')
 						.isOfType()
 						.notEmpty()
 						.notNull()
+						.minLength()
 						.email()
 						.isValid()
 			},
