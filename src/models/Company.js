@@ -55,6 +55,15 @@ class Company extends ModelBase {
 						.notNull()
 						.isValid()
 			},
+			fantasyName: {
+				type: FieldTypes.String,
+				minLength: 3,
+				validate: () =>
+					validator(this, 'fantasyName')
+						.isOfType()
+						.minLength()
+						.isValid()
+			},
 			code: {
 				type: FieldTypes.String,
 				minLength: 1,
