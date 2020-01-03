@@ -22,6 +22,7 @@ class App extends ModelBase {
 		this.$fieldConfig = {
 			name: {
 				type: FieldTypes.String,
+				order: true,
 				minLength: 2,
 				validate: () =>
 					validator(this, 'name')
@@ -33,6 +34,7 @@ class App extends ModelBase {
 			},
 			code: {
 				type: FieldTypes.String,
+				order: true,
 				minLength: 1,
 				validate: () =>
 					validator(this, 'code')

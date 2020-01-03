@@ -46,6 +46,7 @@ class Company extends ModelBase {
 			},
 			name: {
 				type: FieldTypes.String,
+				order: true,
 				minLength: 3,
 				validate: () =>
 					validator(this, 'name')
@@ -57,6 +58,7 @@ class Company extends ModelBase {
 			},
 			fantasyName: {
 				type: FieldTypes.String,
+				order: true,
 				minLength: 3,
 				validate: () =>
 					validator(this, 'fantasyName')

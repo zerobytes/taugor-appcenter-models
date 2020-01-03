@@ -37,6 +37,7 @@ class User extends ModelBase {
 		this.$fieldConfig = {
 			firstName: {
 				type: FieldTypes.String,
+				order: true,
 				validate: () =>
 					validator(this, 'firstName')
 						.isOfType()
@@ -46,6 +47,7 @@ class User extends ModelBase {
 			},
 			lastName: {
 				type: FieldTypes.String,
+				order: true,
 				validate: () =>
 					validator(this, 'lastName')
 						.isOfType()
@@ -79,6 +81,7 @@ class User extends ModelBase {
 			},
 			user: {
 				type: FieldTypes.String,
+				order: true,
 				validate: () =>
 					validator(this, 'user')
 						.isOfType()
@@ -88,6 +91,7 @@ class User extends ModelBase {
 			},
 			email: {
 				type: FieldTypes.String,
+				order: true,
 				validate: () =>
 					validator(this, 'email')
 						.isOfType()

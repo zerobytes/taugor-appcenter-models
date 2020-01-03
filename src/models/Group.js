@@ -25,6 +25,7 @@ class Group extends ModelBase {
 		this.$fieldConfig = {
 			name: {
 				type: FieldTypes.String,
+				order: true,
 				validate: () =>
 					validator(this, 'name')
 						.isOfType()
