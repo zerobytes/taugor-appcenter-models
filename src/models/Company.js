@@ -4,7 +4,8 @@ const FieldTypes = omj.FieldTypes;
 const validator = omj.Validator;
 
 const Group = require('./Group').default,
-	App = require('./App').default;
+	App = require('./App').default,
+	User = require('./User').default;
 
 const shapes = require('../shapes');
 
@@ -20,6 +21,7 @@ const shapes = require('../shapes');
  * @property {string} primaryEmail
  * @property {string} secondaryEmail
  * @property {string} website
+ * @property {string} owner
  * @property {array}  contacts
  * @property {object} billing
  * @property {string} parent
@@ -142,6 +144,13 @@ class Company extends ModelBase {
 					validator(this, 'website')
 						.isOfType()
 						.website()
+						.isValid()
+			},
+			owner: {
+				type: FieldTypes.IdOf(User),
+				validate: () =>
+					validator(this, 'owner')
+						.isOfType()
 						.isValid()
 			},
 			contacts: {

@@ -38,8 +38,6 @@ class Group extends ModelBase {
 				validate: () =>
 					validator(this, 'description')
 						.isOfType()
-						.notEmpty()
-						.notNull()
 						.isValid()
 			},
 			tag: {
