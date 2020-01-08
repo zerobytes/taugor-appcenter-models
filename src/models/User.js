@@ -81,6 +81,8 @@ class User extends ModelBase {
 			},
 			user: {
 				type: FieldTypes.String,
+				transform: (model, value) =>
+					!!value && typeof value === 'string' ? value.trim().toLowerCase() : value,
 				minLength: 3,
 				order: true,
 				validate: () =>
@@ -93,6 +95,8 @@ class User extends ModelBase {
 			},
 			email: {
 				type: FieldTypes.String,
+				transform: (model, value) =>
+					!!value && typeof value === 'string' ? value.trim().toLowerCase() : value,
 				minLength: 5,
 				order: true,
 				validate: () =>

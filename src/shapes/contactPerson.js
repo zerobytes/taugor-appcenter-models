@@ -44,6 +44,8 @@ class ContactPerson extends ShapeBase {
 			},
 			email: {
 				type: FieldTypes.String,
+				transform: (model, value) =>
+					!!value && typeof value === 'string' ? value.trim().toLowerCase() : value,
 				minLength: 10,
 				validate: () =>
 					validator(this, 'email')
@@ -67,6 +69,8 @@ class ContactPerson extends ShapeBase {
 			},
 			website: {
 				type: FieldTypes.String,
+				transform: (model, value) =>
+					!!value && typeof value === 'string' ? value.trim().toLowerCase() : value,
 				minLength: 3,
 				validate: () =>
 					validator(this, 'website')

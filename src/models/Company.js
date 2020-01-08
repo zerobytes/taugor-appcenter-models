@@ -121,6 +121,8 @@ class Company extends ModelBase {
 			},
 			primaryEmail: {
 				type: FieldTypes.String,
+				transform: (model, value) =>
+					!!value && typeof value === 'string' ? value.trim().toLowerCase() : value,
 				validate: () =>
 					validator(this, 'primaryEmail')
 						.isOfType()
@@ -132,6 +134,8 @@ class Company extends ModelBase {
 			},
 			secondaryEmail: {
 				type: FieldTypes.String,
+				transform: (model, value) =>
+					!!value && typeof value === 'string' ? value.trim().toLowerCase() : value,
 				validate: () =>
 					validator(this, 'secondaryEmail')
 						.isOfType()
