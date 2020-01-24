@@ -41,6 +41,16 @@ class Auth extends ModelBase {
 				defaultValue: false,
 				validate: () => true
 			},
+			provider: {
+				type: FieldTypes.String,
+				defaultValue: 'api',
+				validate: () =>
+					validator(this, 'provider')
+						.isOfType()
+						.notEmpty()
+						.notNull()
+						.isValid()
+			},
 			userId: {
 				type: FieldTypes.IdOf(User),
 				validate: () =>

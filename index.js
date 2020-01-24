@@ -11,6 +11,7 @@ const User = require('./src/models/User').default;
 const shapes = require('./src/shapes');
 const billing = shapes.billing;
 const contactPerson = shapes.contactPerson;
+const demoMode = shapes.demoMode;
 const locationAddress = shapes.locationAddress;
 const permissionReference = shapes.permissionReference;
 
@@ -24,6 +25,7 @@ module.exports = {
 	User,
 	billing,
 	contactPerson,
+	demoMode,
 	locationAddress,
 	permissionReference
 };

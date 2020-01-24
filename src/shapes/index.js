@@ -1,5 +1,6 @@
 const appReference = require('./appReference');
 const billing = require('./billing');
+const demoMode = require('./demoMode');
 const companyReference = require('./companyReference');
 const contactPerson = require('./contactPerson');
 const locationAddress = require('./locationAddress');
@@ -10,6 +11,7 @@ module.exports = {
 	billing,
 	companyReference,
 	contactPerson,
+	demoMode,
 	locationAddress,
 	permissionReference
 };
