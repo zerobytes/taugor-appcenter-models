@@ -150,14 +150,14 @@ class Company extends ModelBase {
 						.website()
 						.isValid()
 			},
-			demoMode: {
-				type: FieldTypes.ShapedAs(shapes.demoMode),
-				defaultValue: new shapes.demoMode({ active: false }),
-				validate: () => true
-			},
 			paymentOk: {
 				type: FieldTypes.Boolean,
 				defaultValue: false,
+				validate: () => true
+			},
+			demoMode: {
+				type: FieldTypes.ShapedAs(shapes.demoMode),
+				defaultValue: new shapes.demoMode({ active: false }),
 				validate: () => true
 			},
 			owner: {
