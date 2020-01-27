@@ -1,4 +1,5 @@
 const omj = require('@zerobytes/object-model-js');
+const User = require('../models/User').default;
 const FieldTypes = omj.FieldTypes;
 const validator = omj.Validator;
 const ShapeBase = omj.ShapeBase;
@@ -26,14 +27,15 @@ class DemoMode extends ShapeBase {
 			},
 			expiresOn: {
 				type: FieldTypes.Datetime,
-				// defaultValue: (new Date()).setDate()
+				defaultValue: date,
+				//transform: ()=>{},
 				validate: () =>
 					validator(this, 'expiresOn')
 						.isOfType()
 						.isValid()
 			},
 			sponsor: {
-				type: FieldTypes.String,
+				type: FieldTypes.IdOf(User),
 				validate: () =>
 					validator(this, 'sponsor')
 						.isOfType()
