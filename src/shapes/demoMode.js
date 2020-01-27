@@ -22,7 +22,7 @@ class DemoMode extends ShapeBase {
 				validate: () => true
 			},
 			expiresOn: {
-				type: FieldTypes.DateTime,
+				type: FieldTypes.Datetime,
 				validate: () =>
 					validator(this, 'expiresOn')
 						.isOfType()
