@@ -12,8 +12,11 @@ const ShapeBase = omj.ShapeBase;
 class DemoMode extends ShapeBase {
 	constructor(data = null) {
 		super(data);
+		const date = new Date(Date.now());
+		date.setDate(date.getDate() + 7);
+
 		this.active = false;
-		this.expiresOn = Date.now();
+		this.expiresOn = date;
 		this.sponsor = '';
 		this.$fieldConfig = {
 			active: {
@@ -23,6 +26,7 @@ class DemoMode extends ShapeBase {
 			},
 			expiresOn: {
 				type: FieldTypes.Datetime,
+				// defaultValue: (new Date()).setDate()
 				validate: () =>
 					validator(this, 'expiresOn')
 						.isOfType()
