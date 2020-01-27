@@ -35,7 +35,7 @@ class DemoMode extends ShapeBase {
 						.isValid()
 			},
 			sponsor: {
-				type: FieldTypes.IdOf(new User()),
+				type: FieldTypes.IdOf(User),
 				validate: () =>
 					validator(this, 'sponsor')
 						.isOfType()
