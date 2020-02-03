@@ -33,7 +33,7 @@
 	},
 	"homepage": "https://github.com/zerobytes/taugor-appcenter-models#readme",
 	"dependencies": {
-		"@zerobytes/object-model-js": "^0.3.20"
+		"@zerobytes/object-model-js": "^0.3.21"
 	},
 	"devDependencies": {
 		"@babel/cli": "^7.8.4",
