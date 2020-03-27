@@ -5,6 +5,11 @@ const companyReference = require('./companyReference');
 const contactPerson = require('./contactPerson');
 const locationAddress = require('./locationAddress');
 const permissionReference = require('./permissionReference');
+const BankAccount = require('./BankAccount');
+const FranchiseeInformation = require('./FranchiseeInformation');
+const FranchiseeManagingPartner = require('./FranchiseeManagingPartner');
+const PagarmePhoneNumber = require('./PagarmePhoneNumber');
+const PagarmeAddress = require('./PagarmeAddress');
 
 module.exports = {
 	appReference,
@@ -13,5 +18,10 @@ module.exports = {
 	contactPerson,
 	demoMode,
 	locationAddress,
-	permissionReference
+	permissionReference,
+	BankAccount,
+	FranchiseeInformation,
+	FranchiseeManagingPartner,
+	PagarmePhoneNumber,
+	PagarmeAddress
 };
