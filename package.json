@@ -1,43 +1,27 @@
 {
 	"name": "@taugor/appcenter-models",
-	"version": "0.1.65",
-	"description": "Models package as common ground for authentication/authorisation.",
-	"main": "index.js",
+	"version": "0.1.66",
+	"main": "dist/index.js",
 	"scripts": {
-		"build": "npx babel . --out-dir 'dist' --ignore node_modules --copy-files"
+		"prebuild": "rimraf ./dist",
+		"build": "babel 'src' --out-dir 'dist' --copy-files"
 	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/zerobytes/taugor-appcenter-models.git"
 	},
-	"keywords": [
-		"taugor",
-		"corporation",
-		"models",
-		"package",
-		"set",
-		"common-ground",
-		"auth",
-		"authorization",
-		"authorisation"
-	],
 	"author": "Zerobyte",
 	"contributors": [
 		"guilherme.ferreira@zerobyte.app",
 		"bruno.teixeira.silva@gmail.com"
 	],
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/zerobytes/taugor-appcenter-models/issues"
-	},
-	"homepage": "https://github.com/zerobytes/taugor-appcenter-models#readme",
 	"dependencies": {
 		"@zerobytes/object-model-js": "^0.3.23"
 	},
 	"devDependencies": {
-		"@babel/cli": "^7.8.4",
-		"@babel/core": "^7.8.4",
-		"@babel/preset-env": "^7.8.4",
+		"@babel/cli": "^7.7.5",
+		"@babel/core": "^7.7.5",
+		"@babel/preset-env": "^7.7.6",
 		"rimraf": "^3.0.1"
 	}
 }
