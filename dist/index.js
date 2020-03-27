@@ -89,13 +89,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 //Models for export
 //Shapes for export
-var billing = _shapes["default"].billing;
+var billing = shapes.billing;
 exports.billing = billing;
-var contactPerson = _shapes["default"].contactPerson;
+var contactPerson = shapes.contactPerson;
 exports.contactPerson = contactPerson;
-var demoMode = _shapes["default"].demoMode;
+var demoMode = shapes.demoMode;
 exports.demoMode = demoMode;
-var locationAddress = _shapes["default"].locationAddress;
+var locationAddress = shapes.locationAddress;
 exports.locationAddress = locationAddress;
-var permissionReference = _shapes["default"].permissionReference;
+var permissionReference = shapes.permissionReference;
 exports.permissionReference = permissionReference;

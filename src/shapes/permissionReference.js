@@ -37,4 +37,4 @@ class PermissionReference extends ShapeBase {
 	}
 }
 
-module.exports = PermissionReference;
+export default PermissionReference;

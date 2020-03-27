@@ -94,4 +94,4 @@ class PagarmeAddress extends ShapeBase {
 	}
 }
 
-module.exports = PagarmeAddress;
+export default PagarmeAddress;

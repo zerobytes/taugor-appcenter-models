@@ -56,4 +56,4 @@ class FranchiseeManagingPartner extends ShapeBase {
 	}
 }
 
-module.exports = FranchiseeManagingPartner;
+export default FranchiseeManagingPartner;

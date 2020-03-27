@@ -47,4 +47,4 @@ class DemoMode extends ShapeBase {
 		};
 	}
 }
-module.exports = DemoMode;
+export default DemoMode;

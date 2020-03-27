@@ -38,4 +38,4 @@ class CompanyReference extends ShapeBase {
 	}
 }
 
-module.exports = CompanyReference;
+export default CompanyReference;

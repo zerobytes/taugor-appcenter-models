@@ -1,40 +1,103 @@
 "use strict";
 
-var appReference = require('./appReference');
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+Object.defineProperty(exports, "appReference", {
+  enumerable: true,
+  get: function get() {
+    return _appReference["default"];
+  }
+});
+Object.defineProperty(exports, "billing", {
+  enumerable: true,
+  get: function get() {
+    return _billing["default"];
+  }
+});
+Object.defineProperty(exports, "demoMode", {
+  enumerable: true,
+  get: function get() {
+    return _demoMode["default"];
+  }
+});
+Object.defineProperty(exports, "companyReference", {
+  enumerable: true,
+  get: function get() {
+    return _companyReference["default"];
+  }
+});
+Object.defineProperty(exports, "contactPerson", {
+  enumerable: true,
+  get: function get() {
+    return _contactPerson["default"];
+  }
+});
+Object.defineProperty(exports, "locationAddress", {
+  enumerable: true,
+  get: function get() {
+    return _locationAddress["default"];
+  }
+});
+Object.defineProperty(exports, "permissionReference", {
+  enumerable: true,
+  get: function get() {
+    return _permissionReference["default"];
+  }
+});
+Object.defineProperty(exports, "BankAccount", {
+  enumerable: true,
+  get: function get() {
+    return _BankAccount["default"];
+  }
+});
+Object.defineProperty(exports, "FranchiseeInformation", {
+  enumerable: true,
+  get: function get() {
+    return _FranchiseeInformation["default"];
+  }
+});
+Object.defineProperty(exports, "FranchiseeManagingPartner", {
+  enumerable: true,
+  get: function get() {
+    return _FranchiseeManagingPartner["default"];
+  }
+});
+Object.defineProperty(exports, "PagarmePhoneNumber", {
+  enumerable: true,
+  get: function get() {
+    return _PagarmePhoneNumber["default"];
+  }
+});
+Object.defineProperty(exports, "PagarmeAddress", {
+  enumerable: true,
+  get: function get() {
+    return _PagarmeAddress["default"];
+  }
+});
 
-var billing = require('./billing');
+var _appReference = _interopRequireDefault(require("./appReference"));
 
-var demoMode = require('./demoMode');
+var _billing = _interopRequireDefault(require("./billing"));
 
-var companyReference = require('./companyReference');
+var _demoMode = _interopRequireDefault(require("./demoMode"));
 
-var contactPerson = require('./contactPerson');
+var _companyReference = _interopRequireDefault(require("./companyReference"));
 
-var locationAddress = require('./locationAddress');
+var _contactPerson = _interopRequireDefault(require("./contactPerson"));
 
-var permissionReference = require('./permissionReference');
+var _locationAddress = _interopRequireDefault(require("./locationAddress"));
 
-var BankAccount = require('./BankAccount');
+var _permissionReference = _interopRequireDefault(require("./permissionReference"));
 
-var FranchiseeInformation = require('./FranchiseeInformation');
+var _BankAccount = _interopRequireDefault(require("./BankAccount"));
 
-var FranchiseeManagingPartner = require('./FranchiseeManagingPartner');
+var _FranchiseeInformation = _interopRequireDefault(require("./FranchiseeInformation"));
 
-var PagarmePhoneNumber = require('./PagarmePhoneNumber');
+var _FranchiseeManagingPartner = _interopRequireDefault(require("./FranchiseeManagingPartner"));
 
-var PagarmeAddress = require('./PagarmeAddress');
+var _PagarmePhoneNumber = _interopRequireDefault(require("./PagarmePhoneNumber"));
 
-module.exports = {
-  appReference: appReference,
-  billing: billing,
-  companyReference: companyReference,
-  contactPerson: contactPerson,
-  demoMode: demoMode,
-  locationAddress: locationAddress,
-  permissionReference: permissionReference,
-  BankAccount: BankAccount,
-  FranchiseeInformation: FranchiseeInformation,
-  FranchiseeManagingPartner: FranchiseeManagingPartner,
-  PagarmePhoneNumber: PagarmePhoneNumber,
-  PagarmeAddress: PagarmeAddress
-};
+var _PagarmeAddress = _interopRequireDefault(require("./PagarmeAddress"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }

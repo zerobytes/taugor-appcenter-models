@@ -55,4 +55,4 @@ class Billing extends ModelBase {
 	}
 }
 
-exports.default = Billing;
+export default Billing;

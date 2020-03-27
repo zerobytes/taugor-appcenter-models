@@ -200,4 +200,4 @@ class User extends ModelBase {
 	}
 }
 
-exports.default = User;
+export default User;

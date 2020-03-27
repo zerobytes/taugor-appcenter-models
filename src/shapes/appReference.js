@@ -38,4 +38,4 @@ class AppReference extends ShapeBase {
 	}
 }
 
-module.exports = AppReference;
+export default AppReference;

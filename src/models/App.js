@@ -85,4 +85,4 @@ class App extends ModelBase {
 	}
 }
 
-exports.default = App;
+export default App;

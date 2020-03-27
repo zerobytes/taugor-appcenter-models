@@ -76,4 +76,4 @@ class Auth extends ModelBase {
 	}
 }
 
-exports.default = Auth;
+export default Auth;

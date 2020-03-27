@@ -93,4 +93,4 @@ class FranchiseeInformation extends ShapeBase {
 	}
 }
 
-module.exports = FranchiseeInformation;
+export default FranchiseeInformation;

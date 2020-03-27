@@ -82,4 +82,4 @@ class ContactPerson extends ShapeBase {
 	}
 }
 
-module.exports = ContactPerson;
+export default ContactPerson;

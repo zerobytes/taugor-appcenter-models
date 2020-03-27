@@ -1,27 +1,12 @@
-const appReference = require('./appReference');
-const billing = require('./billing');
-const demoMode = require('./demoMode');
-const companyReference = require('./companyReference');
-const contactPerson = require('./contactPerson');
-const locationAddress = require('./locationAddress');
-const permissionReference = require('./permissionReference');
-const BankAccount = require('./BankAccount');
-const FranchiseeInformation = require('./FranchiseeInformation');
-const FranchiseeManagingPartner = require('./FranchiseeManagingPartner');
-const PagarmePhoneNumber = require('./PagarmePhoneNumber');
-const PagarmeAddress = require('./PagarmeAddress');
-
-module.exports = {
-	appReference,
-	billing,
-	companyReference,
-	contactPerson,
-	demoMode,
-	locationAddress,
-	permissionReference,
-	BankAccount,
-	FranchiseeInformation,
-	FranchiseeManagingPartner,
-	PagarmePhoneNumber,
-	PagarmeAddress
-};
+export { default as appReference } from './appReference';
+export { default as billing } from './billing';
+export { default as demoMode } from './demoMode';
+export { default as companyReference } from './companyReference';
+export { default as contactPerson } from './contactPerson';
+export { default as locationAddress } from './locationAddress';
+export { default as permissionReference } from './permissionReference';
+export { default as BankAccount } from './BankAccount';
+export { default as FranchiseeInformation } from './FranchiseeInformation';
+export { default as FranchiseeManagingPartner } from './FranchiseeManagingPartner';
+export { default as PagarmePhoneNumber } from './PagarmePhoneNumber';
+export { default as PagarmeAddress } from './PagarmeAddress';

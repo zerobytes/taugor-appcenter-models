@@ -72,4 +72,4 @@ class LocationAddress extends ShapeBase {
 	}
 }
 
-module.exports = LocationAddress;
+export default LocationAddress;

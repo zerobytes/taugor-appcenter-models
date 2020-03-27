@@ -126,4 +126,4 @@ class Franchisee extends ModelBase {
 	}
 }
 
-exports.default = Franchisee;
+export default Franchisee;

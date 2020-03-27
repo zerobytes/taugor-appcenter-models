@@ -45,4 +45,4 @@ class PagarmePhoneNumber extends ShapeBase {
 	}
 }
 
-module.exports = PagarmePhoneNumber;
+export default PagarmePhoneNumber;

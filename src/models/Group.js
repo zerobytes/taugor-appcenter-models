@@ -81,4 +81,4 @@ class Group extends ModelBase {
 	}
 }
 
-exports.default = Group;
+export default Group;

@@ -94,4 +94,4 @@ class BankAccount extends ShapeBase {
 	}
 }
 
-module.exports = BankAccount;
+export default BankAccount;

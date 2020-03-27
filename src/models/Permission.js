@@ -54,4 +54,4 @@ class Permission extends ModelBase {
 	}
 }
 
-exports.default = Permission;
+export default Permission;

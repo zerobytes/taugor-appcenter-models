@@ -89,4 +89,4 @@ class Customer extends ModelBase {
 	}
 }
 
-exports.default = Customer;
+export default Customer;

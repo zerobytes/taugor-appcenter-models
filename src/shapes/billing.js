@@ -52,4 +52,4 @@ class Billing extends ShapeBase {
 		};
 	}
 }
-module.exports = Billing;
+export default Billing;
