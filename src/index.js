@@ -1,3 +1,4 @@
+import shapes from './shapes';
 //Models for export
 export { default as Auth } from './models/Auth';
 export { default as App } from './models/App';
@@ -9,11 +10,10 @@ export { default as User } from './models/User';
 export { default as Franchisee } from './models/Franchisee';
 export { default as Customer } from './models/Customer';
 
-//Shapes for export
-import shapes from './shapes';
-export { shapes };
-export const billing = shapes.billing;
-export const contactPerson = shapes.contactPerson;
-export const demoMode = shapes.demoMode;
-export const locationAddress = shapes.locationAddress;
-export const permissionReference = shapes.permissionReference;
+const billing = shapes.billing;
+const contactPerson = shapes.contactPerson;
+const demoMode = shapes.demoMode;
+const locationAddress = shapes.locationAddress;
+const permissionReference = shapes.permissionReference;
+
+export { shapes, billing, contactPerson, demoMode, locationAddress, permissionReference };

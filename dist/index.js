@@ -3,6 +3,12 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+Object.defineProperty(exports, "shapes", {
+  enumerable: true,
+  get: function get() {
+    return _shapes["default"];
+  }
+});
 Object.defineProperty(exports, "Auth", {
   enumerable: true,
   get: function get() {
@@ -57,13 +63,9 @@ Object.defineProperty(exports, "Customer", {
     return _Customer["default"];
   }
 });
-Object.defineProperty(exports, "shapes", {
-  enumerable: true,
-  get: function get() {
-    return _shapes["default"];
-  }
-});
 exports.permissionReference = exports.locationAddress = exports.demoMode = exports.contactPerson = exports.billing = void 0;
+
+var _shapes = _interopRequireDefault(require("./shapes"));
 
 var _Auth = _interopRequireDefault(require("./models/Auth"));
 
@@ -83,19 +85,16 @@ var _Franchisee = _interopRequireDefault(require("./models/Franchisee"));
 
 var _Customer = _interopRequireDefault(require("./models/Customer"));
 
-var _shapes = _interopRequireDefault(require("./shapes"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 //Models for export
-//Shapes for export
-var billing = shapes.billing;
+var billing = _shapes["default"].billing;
 exports.billing = billing;
-var contactPerson = shapes.contactPerson;
+var contactPerson = _shapes["default"].contactPerson;
 exports.contactPerson = contactPerson;
-var demoMode = shapes.demoMode;
+var demoMode = _shapes["default"].demoMode;
 exports.demoMode = demoMode;
-var locationAddress = shapes.locationAddress;
+var locationAddress = _shapes["default"].locationAddress;
 exports.locationAddress = locationAddress;
-var permissionReference = shapes.permissionReference;
+var permissionReference = _shapes["default"].permissionReference;
 exports.permissionReference = permissionReference;
