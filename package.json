@@ -1,6 +1,6 @@
 {
 	"name": "@taugor/appcenter-models",
-	"version": "1.0.00",
+	"version": "1.0.01",
 	"main": "dist/index.js",
 	"scripts": {
 		"prebuild": "rimraf ./dist",
