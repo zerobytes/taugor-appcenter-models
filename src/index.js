@@ -10,7 +10,8 @@ export { default as Franchisee } from './models/Franchisee';
 export { default as Customer } from './models/Customer';
 
 //Shapes for export
-export { default as shapes } from './shapes';
+import shapes from './shapes';
+export { shapes };
 export const billing = shapes.billing;
 export const contactPerson = shapes.contactPerson;
 export const demoMode = shapes.demoMode;
