@@ -3,12 +3,6 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-Object.defineProperty(exports, "shapes", {
-  enumerable: true,
-  get: function get() {
-    return _shapes["default"];
-  }
-});
 Object.defineProperty(exports, "Auth", {
   enumerable: true,
   get: function get() {
@@ -63,9 +57,78 @@ Object.defineProperty(exports, "Customer", {
     return _Customer["default"];
   }
 });
-exports.permissionReference = exports.locationAddress = exports.demoMode = exports.contactPerson = exports.billing = void 0;
-
-var _shapes = _interopRequireDefault(require("./shapes"));
+Object.defineProperty(exports, "appReference", {
+  enumerable: true,
+  get: function get() {
+    return _shapes.appReference;
+  }
+});
+Object.defineProperty(exports, "billing", {
+  enumerable: true,
+  get: function get() {
+    return _shapes.billing;
+  }
+});
+Object.defineProperty(exports, "demoMode", {
+  enumerable: true,
+  get: function get() {
+    return _shapes.demoMode;
+  }
+});
+Object.defineProperty(exports, "companyReference", {
+  enumerable: true,
+  get: function get() {
+    return _shapes.companyReference;
+  }
+});
+Object.defineProperty(exports, "contactPerson", {
+  enumerable: true,
+  get: function get() {
+    return _shapes.contactPerson;
+  }
+});
+Object.defineProperty(exports, "locationAddress", {
+  enumerable: true,
+  get: function get() {
+    return _shapes.locationAddress;
+  }
+});
+Object.defineProperty(exports, "permissionReference", {
+  enumerable: true,
+  get: function get() {
+    return _shapes.permissionReference;
+  }
+});
+Object.defineProperty(exports, "BankAccount", {
+  enumerable: true,
+  get: function get() {
+    return _shapes.BankAccount;
+  }
+});
+Object.defineProperty(exports, "FranchiseeInformation", {
+  enumerable: true,
+  get: function get() {
+    return _shapes.FranchiseeInformation;
+  }
+});
+Object.defineProperty(exports, "FranchiseeManagingPartner", {
+  enumerable: true,
+  get: function get() {
+    return _shapes.FranchiseeManagingPartner;
+  }
+});
+Object.defineProperty(exports, "PagarmePhoneNumber", {
+  enumerable: true,
+  get: function get() {
+    return _shapes.PagarmePhoneNumber;
+  }
+});
+Object.defineProperty(exports, "PagarmeAddress", {
+  enumerable: true,
+  get: function get() {
+    return _shapes.PagarmeAddress;
+  }
+});
 
 var _Auth = _interopRequireDefault(require("./models/Auth"));
 
@@ -85,16 +148,6 @@ var _Franchisee = _interopRequireDefault(require("./models/Franchisee"));
 
 var _Customer = _interopRequireDefault(require("./models/Customer"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+var _shapes = require("./shapes");
 
-//Models for export
-var billing = _shapes["default"].billing;
-exports.billing = billing;
-var contactPerson = _shapes["default"].contactPerson;
-exports.contactPerson = contactPerson;
-var demoMode = _shapes["default"].demoMode;
-exports.demoMode = demoMode;
-var locationAddress = _shapes["default"].locationAddress;
-exports.locationAddress = locationAddress;
-var permissionReference = _shapes["default"].permissionReference;
-exports.permissionReference = permissionReference;
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
