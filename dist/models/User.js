@@ -111,6 +111,12 @@ function (_ModelBase) {
           return validator(_assertThisInitialized(_this), 'user').isOfType().notEmpty().notNull().minLength().isValid();
         }
       },
+      customer: {
+        type: FieldTypes.String,
+        validate: function validate() {
+          return validator(_assertThisInitialized(_this), 'user').isOfType().notEmpty().notNull().minLength().isValid();
+        }
+      },
       email: {
         type: FieldTypes.String,
         transform: function transform(model, value) {

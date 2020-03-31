@@ -40,18 +40,18 @@ function (_ModelBase) {
     _classCallCheck(this, Customer);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Customer).call(this, 'customer'));
-    _this.document_number = '';
+    _this.documents = [];
     _this.name = '';
     _this.email = '';
     _this.born_at = '';
     _this.gender = '';
     _this.address = '';
-    _this.phone = '';
+    _this.phone_number = [];
     _this.$fieldConfig = {
-      document_number: {
+      documents: {
         type: FieldTypes.String,
         validate: function validate() {
-          return validator(_assertThisInitialized(_this), 'document_number').isOfType().notEmpty().notNull().isValid();
+          return validator(_assertThisInitialized(_this), 'documents').isOfType().notEmpty().notNull().isValid();
         }
       },
       name: {
@@ -88,8 +88,8 @@ function (_ModelBase) {
           return validator(_assertThisInitialized(_this), 'address').isOfType().notEmpty().notNull().isValid();
         }
       },
-      phone: {
-        type: FieldTypes.ShapedAs(shapes.PagarmePhoneNumber),
+      phone_numbers: {
+        type: FieldTypes.ArrayOf(FieldTypes.ShapedAs(shapes.PagarmePhoneNumber)),
         validate: function validate() {
           return validator(_assertThisInitialized(_this), 'phone').isOfType().notEmpty().notNull().isValid();
         }

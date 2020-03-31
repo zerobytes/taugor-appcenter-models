@@ -93,6 +93,16 @@ class User extends ModelBase {
 						.minLength()
 						.isValid()
 			},
+			customer: {
+				type: FieldTypes.String,
+				validate: () =>
+					validator(this, 'user')
+						.isOfType()
+						.notEmpty()
+						.notNull()
+						.minLength()
+						.isValid()
+			},
 			email: {
 				type: FieldTypes.String,
 				transform: (model, value) =>

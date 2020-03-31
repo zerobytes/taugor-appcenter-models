@@ -7,19 +7,19 @@ class Customer extends ModelBase {
 	constructor(properties = null) {
 		super('customer');
 
-		this.document_number = '';
+		this.documents = [];
 		this.name = '';
 		this.email = '';
 		this.born_at = '';
 		this.gender = '';
 		this.address = '';
-		this.phone = '';
+		this.phone_number = [];
 
 		this.$fieldConfig = {
-			document_number: {
+			documents: {
 				type: FieldTypes.String,
 				validate: () =>
-					validator(this, 'document_number')
+					validator(this, 'documents')
 						.isOfType()
 						.notEmpty()
 						.notNull()
@@ -74,8 +74,8 @@ class Customer extends ModelBase {
 						.notNull()
 						.isValid()
 			},
-			phone: {
-				type: FieldTypes.ShapedAs(shapes.PagarmePhoneNumber),
+			phone_numbers: {
+				type: FieldTypes.ArrayOf(FieldTypes.ShapedAs(shapes.PagarmePhoneNumber)),
 				validate: () =>
 					validator(this, 'phone')
 						.isOfType()
