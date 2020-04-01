@@ -31,7 +31,14 @@ class License extends ModelBase {
 						.isValid()
 			},
 			amount: {
-				type: FieldTypes.String,
+				type: FieldTypes.Integer,
+				validate: () =>
+					validator(this, 'amount')
+						.isOfType()
+						.isValid()
+			},
+			used: {
+				type: FieldTypes.Integer,
 				validate: () =>
 					validator(this, 'amount')
 						.isOfType()

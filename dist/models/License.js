@@ -54,7 +54,13 @@ function (_ModelBase) {
         }
       },
       amount: {
-        type: FieldTypes.String,
+        type: FieldTypes.Integer,
+        validate: function validate() {
+          return validator(_assertThisInitialized(_this), 'amount').isOfType().isValid();
+        }
+      },
+      used: {
+        type: FieldTypes.Integer,
         validate: function validate() {
           return validator(_assertThisInitialized(_this), 'amount').isOfType().isValid();
         }
