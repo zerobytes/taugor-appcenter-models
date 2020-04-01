@@ -8,6 +8,7 @@ export { default as Permission } from './models/Permission';
 export { default as User } from './models/User';
 export { default as Franchisee } from './models/Franchisee';
 export { default as Customer } from './models/Customer';
+export { default as License } from './models/License';
 
 export {
 	appReference,

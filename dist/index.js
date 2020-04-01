@@ -57,6 +57,12 @@ Object.defineProperty(exports, "Customer", {
     return _Customer["default"];
   }
 });
+Object.defineProperty(exports, "License", {
+  enumerable: true,
+  get: function get() {
+    return _License["default"];
+  }
+});
 Object.defineProperty(exports, "appReference", {
   enumerable: true,
   get: function get() {
@@ -147,6 +153,8 @@ var _User = _interopRequireDefault(require("./models/User"));
 var _Franchisee = _interopRequireDefault(require("./models/Franchisee"));
 
 var _Customer = _interopRequireDefault(require("./models/Customer"));
+
+var _License = _interopRequireDefault(require("./models/License"));
 
 var _shapes = require("./shapes");
 
