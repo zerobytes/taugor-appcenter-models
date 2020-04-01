@@ -9,7 +9,7 @@ class License extends ModelBase {
 
 		this.$fieldConfig = {
 			app: {
-				type: FieldTypes.IdOf(App),
+				type: FieldTypes.String,
 				minLength: 1,
 				validate: () =>
 					validator(this, 'app')
@@ -20,7 +20,7 @@ class License extends ModelBase {
 						.isValid()
 			},
 			company: {
-				type: FieldTypes.IdOf(Company),
+				type: FieldTypes.String,
 				minLength: 1,
 				validate: () =>
 					validator(this, 'company')

@@ -40,14 +40,14 @@ function (_ModelBase) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(License).call(this, 'license'));
     _this.$fieldConfig = {
       app: {
-        type: FieldTypes.IdOf(App),
+        type: FieldTypes.String,
         minLength: 1,
         validate: function validate() {
           return validator(_assertThisInitialized(_this), 'app').isOfType().minLength().notEmpty().notNull().isValid();
         }
       },
       company: {
-        type: FieldTypes.IdOf(Company),
+        type: FieldTypes.String,
         minLength: 1,
         validate: function validate() {
           return validator(_assertThisInitialized(_this), 'company').isOfType().minLength().notEmpty().notNull().isValid();
