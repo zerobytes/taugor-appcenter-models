@@ -59,10 +59,22 @@ function (_ModelBase) {
           return validator(_assertThisInitialized(_this), 'amount').isOfType().isValid();
         }
       },
+      demoStartedAt: {
+        type: FieldTypes.Datetime,
+        validate: function validate() {
+          return validator(_assertThisInitialized(_this), 'demoStartedAt').isOfType().isValid();
+        }
+      },
+      demoExpiresAt: {
+        type: FieldTypes.Datetime,
+        validate: function validate() {
+          return validator(_assertThisInitialized(_this), 'demoExpiresAt').isOfType().isValid();
+        }
+      },
       used: {
         type: FieldTypes.Integer,
         validate: function validate() {
-          return validator(_assertThisInitialized(_this), 'amount').isOfType().isValid();
+          return validator(_assertThisInitialized(_this), 'used').isOfType().isValid();
         }
       },
       type: {
@@ -87,6 +99,12 @@ function (_ModelBase) {
         type: FieldTypes.String,
         validate: function validate() {
           return validator(_assertThisInitialized(_this), 'status').isOfType().isValid();
+        }
+      },
+      history: {
+        type: FieldTypes.Array,
+        validate: function validate() {
+          return validator(_assertThisInitialized(_this), 'history').isOfType().isValid();
         }
       }
     };

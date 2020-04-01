@@ -37,16 +37,29 @@ class License extends ModelBase {
 						.isOfType()
 						.isValid()
 			},
+			demoStartedAt: {
+				type: FieldTypes.Datetime,
+				validate: () =>
+					validator(this, 'demoStartedAt')
+						.isOfType()
+						.isValid()
+			},
+			demoExpiresAt: {
+				type: FieldTypes.Datetime,
+				validate: () =>
+					validator(this, 'demoExpiresAt')
+						.isOfType()
+						.isValid()
+			},
 			used: {
 				type: FieldTypes.Integer,
 				validate: () =>
-					validator(this, 'amount')
+					validator(this, 'used')
 						.isOfType()
 						.isValid()
 			},
 			type: {
 				type: FieldTypes.String,
-
 				validate: () =>
 					validator(this, 'type')
 						.isOfType()
@@ -54,7 +67,6 @@ class License extends ModelBase {
 			},
 			planId: {
 				type: FieldTypes.String,
-
 				validate: () =>
 					validator(this, 'planId')
 						.isOfType()
@@ -62,7 +74,6 @@ class License extends ModelBase {
 			},
 			subscriptionId: {
 				type: FieldTypes.String,
-
 				validate: () =>
 					validator(this, 'subscriptionId')
 						.isOfType()
@@ -70,9 +81,15 @@ class License extends ModelBase {
 			},
 			status: {
 				type: FieldTypes.String,
-
 				validate: () =>
 					validator(this, 'status')
+						.isOfType()
+						.isValid()
+			},
+			history: {
+				type: FieldTypes.Array,
+				validate: () =>
+					validator(this, 'history')
 						.isOfType()
 						.isValid()
 			}
