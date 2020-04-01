@@ -55,35 +55,30 @@ function (_ModelBase) {
       },
       amount: {
         type: FieldTypes.String,
-        defaultValue: {},
         validate: function validate() {
           return validator(_assertThisInitialized(_this), 'amount').isOfType().isValid();
         }
       },
       type: {
         type: FieldTypes.String,
-        defaultValue: {},
         validate: function validate() {
           return validator(_assertThisInitialized(_this), 'type').isOfType().isValid();
         }
       },
       planId: {
         type: FieldTypes.String,
-        defaultValue: {},
         validate: function validate() {
           return validator(_assertThisInitialized(_this), 'planId').isOfType().isValid();
         }
       },
       subscriptionId: {
         type: FieldTypes.String,
-        defaultValue: {},
         validate: function validate() {
           return validator(_assertThisInitialized(_this), 'subscriptionId').isOfType().isValid();
         }
       },
       status: {
         type: FieldTypes.String,
-        defaultValue: {},
         validate: function validate() {
           return validator(_assertThisInitialized(_this), 'status').isOfType().isValid();
         }

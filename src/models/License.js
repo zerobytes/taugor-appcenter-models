@@ -32,7 +32,6 @@ class License extends ModelBase {
 			},
 			amount: {
 				type: FieldTypes.String,
-				defaultValue: {},
 				validate: () =>
 					validator(this, 'amount')
 						.isOfType()
@@ -40,7 +39,7 @@ class License extends ModelBase {
 			},
 			type: {
 				type: FieldTypes.String,
-				defaultValue: {},
+
 				validate: () =>
 					validator(this, 'type')
 						.isOfType()
@@ -48,7 +47,7 @@ class License extends ModelBase {
 			},
 			planId: {
 				type: FieldTypes.String,
-				defaultValue: {},
+
 				validate: () =>
 					validator(this, 'planId')
 						.isOfType()
@@ -56,7 +55,7 @@ class License extends ModelBase {
 			},
 			subscriptionId: {
 				type: FieldTypes.String,
-				defaultValue: {},
+
 				validate: () =>
 					validator(this, 'subscriptionId')
 						.isOfType()
@@ -64,7 +63,7 @@ class License extends ModelBase {
 			},
 			status: {
 				type: FieldTypes.String,
-				defaultValue: {},
+
 				validate: () =>
 					validator(this, 'status')
 						.isOfType()
