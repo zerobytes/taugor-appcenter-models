@@ -160,7 +160,7 @@ class User extends ModelBase {
 				protected: true,
 				defaultValue: false,
 				validate: () =>
-					validator(this, 'superadmin')
+					validator(this, 'companyadmin')
 						.isOfType()
 						.isValid()
 			},

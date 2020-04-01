@@ -4,7 +4,8 @@
 	"main": "dist/index.js",
 	"scripts": {
 		"prebuild": "rimraf ./dist",
-		"build": "babel 'src' --out-dir 'dist' --copy-files"
+		"build": "babel 'src' --out-dir 'dist' --copy-files",
+		"deploy": "yarn build && git add . && git commit -m 'v-update-deploy' && git push"
 	},
 	"repository": {
 		"type": "git",

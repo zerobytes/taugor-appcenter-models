@@ -164,7 +164,7 @@ function (_ModelBase) {
         "protected": true,
         defaultValue: false,
         validate: function validate() {
-          return validator(_assertThisInitialized(_this), 'superadmin').isOfType().isValid();
+          return validator(_assertThisInitialized(_this), 'companyadmin').isOfType().isValid();
         }
       },
       phoneCountry: {
