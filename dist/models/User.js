@@ -29,29 +29,6 @@ var validator = omj.Validator;
 var Company = require('./Company')["default"],
     Group = require('./Group')["default"],
     shapes = require('../shapes');
-/**
- * @type User
- * @property {string} firstName
- * @property {string} lastName
- * @property {string} taxDocument
- * @property {string} provider
- * @property {array<any>} addresses
- * @property {string} birthdate
- * @property {string} user
- * @property {string} email
- * @property {boolean} emailVerified
- * @property {string} password
- * @property {string} salt
- * @property {boolean} superadmin
- * @property {string} phoneCountry
- * @property {string} phoneArea
- * @property {string} phone
- * @property {array<CompanyReference>} companies
- * @property {array<string>} groups
- * @property {string} createdBy
- * @property {date} creationDate
- */
-
 
 var User =
 /*#__PURE__*/
@@ -212,6 +189,12 @@ function (_ModelBase) {
         // 	.isOfType()
         // 	.isValid()
 
+      },
+      active: {
+        type: FieldTypes.Boolean,
+        validate: function validate() {
+          return true;
+        }
       }
     };
 
