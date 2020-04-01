@@ -188,8 +188,9 @@ class User extends ModelBase {
 				// 	.isOfType()
 				// 	.isValid()
 			},
-			active: {
-				type: FieldTypes.Boolean,
+			applications: {
+				type: FieldTypes.ArrayOf(FieldTypes.String),
+				defaultValue: [],
 				validate: () => true
 			}
 		};

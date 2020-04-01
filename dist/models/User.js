@@ -190,8 +190,9 @@ function (_ModelBase) {
         // 	.isValid()
 
       },
-      active: {
-        type: FieldTypes.Boolean,
+      applications: {
+        type: FieldTypes.ArrayOf(FieldTypes.String),
+        defaultValue: [],
         validate: function validate() {
           return true;
         }
