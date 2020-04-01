@@ -144,17 +144,22 @@ function (_ModelBase) {
         }
       },
       salt: {
-        //TODO: implement hidden field function
         type: FieldTypes.String,
-        //protected: true,
         hidden: true,
         defaultValue: generateSalt(10),
-        // transform: (model, value) => {},
         validate: function validate() {
           return validator(_assertThisInitialized(_this), 'salt').isOfType().isValid();
         }
       },
       superadmin: {
+        type: FieldTypes.Boolean,
+        "protected": true,
+        defaultValue: false,
+        validate: function validate() {
+          return validator(_assertThisInitialized(_this), 'superadmin').isOfType().isValid();
+        }
+      },
+      companyadmin: {
         type: FieldTypes.Boolean,
         "protected": true,
         defaultValue: false,

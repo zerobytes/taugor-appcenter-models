@@ -138,18 +138,24 @@ class User extends ModelBase {
 						.isValid()
 			},
 			salt: {
-				//TODO: implement hidden field function
 				type: FieldTypes.String,
-				//protected: true,
 				hidden: true,
 				defaultValue: generateSalt(10),
-				// transform: (model, value) => {},
 				validate: () =>
 					validator(this, 'salt')
 						.isOfType()
 						.isValid()
 			},
 			superadmin: {
+				type: FieldTypes.Boolean,
+				protected: true,
+				defaultValue: false,
+				validate: () =>
+					validator(this, 'superadmin')
+						.isOfType()
+						.isValid()
+			},
+			companyadmin: {
 				type: FieldTypes.Boolean,
 				protected: true,
 				defaultValue: false,
