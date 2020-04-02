@@ -17,6 +17,10 @@ class Permission extends ModelBase {
 		super('permission');
 
 		this.$fieldConfig = {
+			app: {
+				type: FieldTypes.String,
+				validate: () => true
+			},
 			title: {
 				type: FieldTypes.String,
 				order: true,

@@ -48,6 +48,12 @@ function (_ModelBase) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Permission).call(this, 'permission'));
     _this.$fieldConfig = {
+      app: {
+        type: FieldTypes.String,
+        validate: function validate() {
+          return true;
+        }
+      },
       title: {
         type: FieldTypes.String,
         order: true,
