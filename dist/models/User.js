@@ -115,7 +115,6 @@ function (_ModelBase) {
       password: {
         type: FieldTypes.String,
         "protected": true,
-        // transform: (model, value) => pwdHash(value, model.salt),
         validate: function validate() {
           return validator(_assertThisInitialized(_this), 'password').isOfType().notEmpty().notNull().isValid();
         }
@@ -172,27 +171,26 @@ function (_ModelBase) {
       companies: {
         type: FieldTypes.ArrayOf(FieldTypes.IdOf(Company)),
         defaultValue: [],
-        // transform: (model, value) => value.map((item) => new CompanyReference(item)),
         validate: function validate() {
           return true;
-        } // validator(this, 'companies')
-        // 	.isOfType()
-        // 	.isValid()
-
+        }
       },
       groups: {
         type: FieldTypes.ArrayOf(FieldTypes.IdOf(Group)),
         defaultValue: [],
         validate: function validate() {
           return true;
-        } // validator(this, 'groups')
-        // 	.isOfType()
-        // 	.isValid()
-
+        }
       },
       applications: {
-        type: FieldTypes.ArrayOf(FieldTypes.String),
-        defaultValue: [],
+        type: FieldTypes.Object,
+        defaultValue: {},
+        validate: function validate() {
+          return true;
+        }
+      },
+      active: {
+        type: FieldTypes.Boolean,
         validate: function validate() {
           return true;
         }

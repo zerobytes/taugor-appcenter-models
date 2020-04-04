@@ -107,7 +107,6 @@ class User extends ModelBase {
 			password: {
 				type: FieldTypes.String,
 				protected: true,
-				// transform: (model, value) => pwdHash(value, model.salt),
 				validate: () =>
 					validator(this, 'password')
 						.isOfType()
@@ -174,23 +173,20 @@ class User extends ModelBase {
 			companies: {
 				type: FieldTypes.ArrayOf(FieldTypes.IdOf(Company)),
 				defaultValue: [],
-				// transform: (model, value) => value.map((item) => new CompanyReference(item)),
 				validate: () => true
-				// validator(this, 'companies')
-				// 	.isOfType()
-				// 	.isValid()
 			},
 			groups: {
 				type: FieldTypes.ArrayOf(FieldTypes.IdOf(Group)),
 				defaultValue: [],
 				validate: () => true
-				// validator(this, 'groups')
-				// 	.isOfType()
-				// 	.isValid()
 			},
 			applications: {
-				type: FieldTypes.ArrayOf(FieldTypes.String),
-				defaultValue: [],
+				type: FieldTypes.Object,
+				defaultValue: {},
+				validate: () => true
+			},
+			active: {
+				type: FieldTypes.Boolean,
 				validate: () => true
 			}
 		};
