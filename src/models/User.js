@@ -186,7 +186,7 @@ class User extends ModelBase {
 				validate: () => true
 			},
 			active: {
-				type: FieldTypes.Boolean,
+				type: FieldTypes.ArrayOf(FieldTypes.IdOf(Company)),
 				validate: () => true
 			}
 		};

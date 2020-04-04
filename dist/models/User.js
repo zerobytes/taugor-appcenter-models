@@ -190,7 +190,7 @@ function (_ModelBase) {
         }
       },
       active: {
-        type: FieldTypes.Boolean,
+        type: FieldTypes.ArrayOf(FieldTypes.IdOf(Company)),
         validate: function validate() {
           return true;
         }
