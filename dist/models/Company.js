@@ -228,6 +228,12 @@ function (_ModelBase) {
           return true;
         }
       },
+      isFranchiseeContractBlocked: {
+        type: FieldTypes.Boolean,
+        validate: function validate() {
+          return true;
+        }
+      },
       geographicRegions: {
         type: FieldTypes.Object,
         validate: function validate() {

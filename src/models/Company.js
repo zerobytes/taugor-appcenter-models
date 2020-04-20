@@ -173,6 +173,10 @@ class Company extends ModelBase {
 				type: FieldTypes.Boolean,
 				validate: () => true,
 			},
+			isFranchiseeContractBlocked: {
+				type: FieldTypes.Boolean,
+				validate: () => true,
+			},
 			geographicRegions: {
 				type: FieldTypes.Object,
 				validate: () => true,
