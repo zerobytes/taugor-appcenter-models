@@ -44,49 +44,31 @@ class Company extends ModelBase {
 						.notEmpty()
 						.notNull()
 						.minLength()
-						.isValid()
+						.isValid(),
 			},
 			name: {
 				type: FieldTypes.String,
 				order: true,
 				minLength: 3,
 				validate: () =>
-					validator(this, 'name')
-						.isOfType()
-						.minLength()
-						.notEmpty()
-						.notNull()
-						.isValid()
+					validator(this, 'name').isOfType().minLength().notEmpty().notNull().isValid(),
 			},
 			fantasyName: {
 				type: FieldTypes.String,
 				order: true,
 				minLength: 3,
-				validate: () =>
-					validator(this, 'fantasyName')
-						.isOfType()
-						.minLength()
-						.isValid()
+				validate: () => validator(this, 'fantasyName').isOfType().minLength().isValid(),
 			},
 			code: {
 				type: FieldTypes.String,
 				minLength: 1,
 				validate: () =>
-					validator(this, 'code')
-						.isOfType()
-						.minLength()
-						.notEmpty()
-						.notNull()
-						.isValid()
+					validator(this, 'code').isOfType().minLength().notEmpty().notNull().isValid(),
 			},
 			description: {
 				type: FieldTypes.String,
 				minLength: 10,
-				validate: () =>
-					validator(this, 'description')
-						.isOfType()
-						.minLength()
-						.isValid()
+				validate: () => validator(this, 'description').isOfType().minLength().isValid(),
 			},
 			address: {
 				type: FieldTypes.String,
@@ -97,7 +79,7 @@ class Company extends ModelBase {
 						.notEmpty()
 						.notNull()
 						.minLength()
-						.isValid()
+						.isValid(),
 			},
 			primaryPhone: {
 				type: FieldTypes.String,
@@ -108,16 +90,12 @@ class Company extends ModelBase {
 						.notEmpty()
 						.notNull()
 						.minLength()
-						.isValid()
+						.isValid(),
 			},
 			secondaryPhone: {
 				type: FieldTypes.String,
 				minLength: 8,
-				validate: () =>
-					validator(this, 'secondaryPhone')
-						.isOfType()
-						.minLength()
-						.isValid()
+				validate: () => validator(this, 'secondaryPhone').isOfType().minLength().isValid(),
 			},
 			primaryEmail: {
 				type: FieldTypes.String,
@@ -130,82 +108,75 @@ class Company extends ModelBase {
 						.notEmpty()
 						.notNull()
 						.minLength()
-						.isValid()
+						.isValid(),
 			},
 			secondaryEmail: {
 				type: FieldTypes.String,
 				transform: (model, value) =>
 					!!value && typeof value === 'string' ? value.trim().toLowerCase() : value,
-				validate: () =>
-					validator(this, 'secondaryEmail')
-						.isOfType()
-						.email()
-						.isValid()
+				validate: () => validator(this, 'secondaryEmail').isOfType().email().isValid(),
 			},
 			website: {
 				type: FieldTypes.String,
-				validate: () =>
-					validator(this, 'website')
-						.isOfType()
-						.website()
-						.isValid()
+				validate: () => validator(this, 'website').isOfType().website().isValid(),
 			},
 			paymentOk: {
 				type: FieldTypes.Boolean,
 				defaultValue: false,
-				validate: () => true
+				validate: () => true,
 			},
 			demoMode: {
 				type: FieldTypes.ShapedAs(shapes.demoMode),
 				defaultValue: new shapes.demoMode({ active: false }),
-				validate: () => true
+				validate: () => true,
 			},
 			owner: {
 				type: FieldTypes.IdOf(User),
-				validate: () =>
-					validator(this, 'owner')
-						.isOfType()
-						.isValid()
+				validate: () => validator(this, 'owner').isOfType().isValid(),
 			},
 			contacts: {
 				type: FieldTypes.ArrayOf(FieldTypes.ShapedAs(shapes.contactPerson)),
 				defaultValue: [],
-				validate: () =>
-					validator(this, 'contacts')
-						.isOfType()
-						.isValid()
+				validate: () => validator(this, 'contacts').isOfType().isValid(),
 			},
 			billing: {
 				type: FieldTypes.ShapedAs(shapes.billing),
-				validate: () =>
-					validator(this, 'billing')
-						.isOfType()
-						.isValid()
+				validate: () => validator(this, 'billing').isOfType().isValid(),
 			},
 			parent: {
 				type: FieldTypes.IdOf(Company),
-				validate: () => true
-				// validator(this, 'parent')
-				// 	.isOfType()
-				// 	.isValid()
+				validate: () => true,
 			},
 			groups: {
 				type: FieldTypes.ArrayOf(FieldTypes.IdOf(Group)),
 				defaultValue: [],
-				validate: () => true
-				// validator(this, 'groups')
-				// 	.isOfType()
-				// 	.isValid()
+				validate: () => true,
 			},
 			apps: {
 				type: FieldTypes.ArrayOf(FieldTypes.IdOf(App)),
 				defaultValue: [],
-				// transform: (model, value) => value.map((item) => new AppReference(item)),
-				validate: () => true
-				// validator(this, 'apps')
-				// 	.isOfType()
-				// 	.isValid()
-			}
+				validate: () => true,
+			},
+			receiverId: {
+				type: FieldTypes.String,
+				validate: () => true,
+			},
+			isFranchisee: {
+				type: FieldTypes.Object,
+				validate: () => true,
+			},
+			isSelfEmployed: {
+				type: FieldTypes.Boolean,
+				validate: () => true,
+			},
+			isIncludedInOnlineSales: {
+				type: FieldTypes.Boolean,
+				validate: () => true,
+			},
+			geographicRegions: {
+				type: FieldTypes.Object,
+				validate: () => true,
+			},
 		};
 
 		this.$fill(properties);

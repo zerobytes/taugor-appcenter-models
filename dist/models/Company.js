@@ -188,31 +188,51 @@ function (_ModelBase) {
         type: FieldTypes.IdOf(Company),
         validate: function validate() {
           return true;
-        } // validator(this, 'parent')
-        // 	.isOfType()
-        // 	.isValid()
-
+        }
       },
       groups: {
         type: FieldTypes.ArrayOf(FieldTypes.IdOf(Group)),
         defaultValue: [],
         validate: function validate() {
           return true;
-        } // validator(this, 'groups')
-        // 	.isOfType()
-        // 	.isValid()
-
+        }
       },
       apps: {
         type: FieldTypes.ArrayOf(FieldTypes.IdOf(App)),
         defaultValue: [],
-        // transform: (model, value) => value.map((item) => new AppReference(item)),
         validate: function validate() {
           return true;
-        } // validator(this, 'apps')
-        // 	.isOfType()
-        // 	.isValid()
-
+        }
+      },
+      receiverId: {
+        type: FieldTypes.String,
+        validate: function validate() {
+          return true;
+        }
+      },
+      isFranchisee: {
+        type: FieldTypes.Object,
+        validate: function validate() {
+          return true;
+        }
+      },
+      isSelfEmployed: {
+        type: FieldTypes.Boolean,
+        validate: function validate() {
+          return true;
+        }
+      },
+      isIncludedInOnlineSales: {
+        type: FieldTypes.Boolean,
+        validate: function validate() {
+          return true;
+        }
+      },
+      geographicRegions: {
+        type: FieldTypes.Object,
+        validate: function validate() {
+          return true;
+        }
       }
     };
 

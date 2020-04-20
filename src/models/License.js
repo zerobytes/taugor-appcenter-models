@@ -79,6 +79,13 @@ class License extends ModelBase {
 						.isOfType()
 						.isValid()
 			},
+			resetPeriodicity: {
+				type: FieldTypes.String,
+				validate: () =>
+					validator(this, 'resetPeriodicity')
+						.isOfType()
+						.isValid()
+			},
 			status: {
 				type: FieldTypes.String,
 				validate: () =>

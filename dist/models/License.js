@@ -95,6 +95,12 @@ function (_ModelBase) {
           return validator(_assertThisInitialized(_this), 'subscriptionId').isOfType().isValid();
         }
       },
+      resetPeriodicity: {
+        type: FieldTypes.String,
+        validate: function validate() {
+          return validator(_assertThisInitialized(_this), 'resetPeriodicity').isOfType().isValid();
+        }
+      },
       status: {
         type: FieldTypes.String,
         validate: function validate() {

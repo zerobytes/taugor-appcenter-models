@@ -21,7 +21,7 @@ class Franchisee extends ModelBase {
 						.isOfType()
 						.notEmpty()
 						.notNull()
-						.isValid()
+						.isValid(),
 			},
 			/**
 			 * Define se o recebedor pode receber antecipações automáticas.
@@ -33,7 +33,7 @@ class Franchisee extends ModelBase {
 						.isOfType()
 						.notEmpty()
 						.notNull()
-						.isValid()
+						.isValid(),
 			},
 			/**
 			 * Essa propriedade deverá conter o id de uma conta bancária
@@ -42,11 +42,7 @@ class Franchisee extends ModelBase {
 			bank_account: {
 				type: FieldTypes.ShapeAs(shapes.BankAccount),
 				validate: () =>
-					validator(this, 'bank_account')
-						.isOfType()
-						.notEmpty()
-						.notNull()
-						.isValid()
+					validator(this, 'bank_account').isOfType().notEmpty().notNull().isValid(),
 			},
 			/**
 			 * Essa propriedade define em qual dia as transferências
@@ -56,11 +52,7 @@ class Franchisee extends ModelBase {
 			transfer_day: {
 				type: FieldTypes.String,
 				validate: () =>
-					validator(this, 'transfer_day')
-						.isOfType()
-						.notEmpty()
-						.notNull()
-						.isValid()
+					validator(this, 'transfer_day').isOfType().notEmpty().notNull().isValid(),
 			},
 			/**
 			 * Essa propriedade define se o recebedor pode receber seus
@@ -73,11 +65,7 @@ class Franchisee extends ModelBase {
 			transfer_enabled: {
 				type: FieldTypes.String,
 				validate: () =>
-					validator(this, 'transfer_enabled')
-						.isOfType()
-						.notEmpty()
-						.notNull()
-						.isValid()
+					validator(this, 'transfer_enabled').isOfType().notEmpty().notNull().isValid(),
 			},
 			/**
 			 * Essa propriedade define com qual frequência os valores
@@ -88,11 +76,7 @@ class Franchisee extends ModelBase {
 			transfer_interval: {
 				type: FieldTypes.String,
 				validate: () =>
-					validator(this, 'transfer_interval')
-						.isOfType()
-						.notEmpty()
-						.notNull()
-						.isValid()
+					validator(this, 'transfer_interval').isOfType().notEmpty().notNull().isValid(),
 			},
 			/**
 			 * Campo usado para receber informações cadastrais de um recebedor.
@@ -102,11 +86,7 @@ class Franchisee extends ModelBase {
 			register_information: {
 				type: FieldTypes.ShapedAs(shapes.FranchiseeInformation),
 				validate: () =>
-					validator(this, 'geographic_region')
-						.isOfType()
-						.notEmpty()
-						.notNull()
-						.isValid()
+					validator(this, 'geographic_region').isOfType().notEmpty().notNull().isValid(),
 			},
 			/**
 			 * Objeto com dados adicionais do recebedor.
@@ -115,11 +95,8 @@ class Franchisee extends ModelBase {
 			 */
 			metadata: {
 				type: FieldTypes.Object,
-				validate: () =>
-					validator(this, 'metadata')
-						.isOfType()
-						.isValid()
-			}
+				validate: () => validator(this, 'metadata').isOfType().isValid(),
+			},
 		};
 
 		this.$fill(properties);
