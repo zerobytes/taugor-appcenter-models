@@ -228,20 +228,14 @@ function (_ModelBase) {
           return true;
         }
       },
-      isIncludedInOnlineSales: {
+      isFranchisee: {
         type: FieldTypes.Boolean,
         validate: function validate() {
           return true;
         }
       },
-      isFranchiseeContractBlocked: {
-        type: FieldTypes.Boolean,
-        validate: function validate() {
-          return true;
-        }
-      },
-      geographicRegions: {
-        type: FieldTypes.Object,
+      franchiseeContract: {
+        type: FieldTypes.ShapedAs(shapes.FranchiseeContract),
         validate: function validate() {
           return true;
         }

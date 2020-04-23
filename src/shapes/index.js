@@ -10,3 +10,4 @@ export { default as FranchiseeInformation } from './FranchiseeInformation';
 export { default as FranchiseeManagingPartner } from './FranchiseeManagingPartner';
 export { default as PagarmePhoneNumber } from './PagarmePhoneNumber';
 export { default as PagarmeAddress } from './PagarmeAddress';
+export { default as FranchiseeContract } from './FranchiseeContract';

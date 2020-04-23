@@ -75,6 +75,12 @@ Object.defineProperty(exports, "PagarmeAddress", {
     return _PagarmeAddress["default"];
   }
 });
+Object.defineProperty(exports, "FranchiseeContract", {
+  enumerable: true,
+  get: function get() {
+    return _FranchiseeContract["default"];
+  }
+});
 
 var _appReference = _interopRequireDefault(require("./appReference"));
 
@@ -99,5 +105,7 @@ var _FranchiseeManagingPartner = _interopRequireDefault(require("./FranchiseeMan
 var _PagarmePhoneNumber = _interopRequireDefault(require("./PagarmePhoneNumber"));
 
 var _PagarmeAddress = _interopRequireDefault(require("./PagarmeAddress"));
+
+var _FranchiseeContract = _interopRequireDefault(require("./FranchiseeContract"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }

@@ -173,16 +173,12 @@ class Company extends ModelBase {
 				type: FieldTypes.Boolean,
 				validate: () => true,
 			},
-			isIncludedInOnlineSales: {
+			isFranchisee: {
 				type: FieldTypes.Boolean,
 				validate: () => true,
 			},
-			isFranchiseeContractBlocked: {
-				type: FieldTypes.Boolean,
-				validate: () => true,
-			},
-			geographicRegions: {
-				type: FieldTypes.Object,
+			franchiseeContract: {
+				type: FieldTypes.ShapedAs(shapes.FranchiseeContract),
 				validate: () => true,
 			},
 		};
