@@ -89,6 +89,12 @@ function (_ModelBase) {
           return validator(_assertThisInitialized(_this), 'planId').isOfType().isValid();
         }
       },
+      planDescription: {
+        type: FieldTypes.String,
+        validate: function validate() {
+          return validator(_assertThisInitialized(_this), 'planDescription').isOfType().isValid();
+        }
+      },
       subscriptionId: {
         type: FieldTypes.String,
         validate: function validate() {
