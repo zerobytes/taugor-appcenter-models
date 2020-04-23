@@ -161,7 +161,11 @@ class Company extends ModelBase {
 				type: FieldTypes.String,
 				validate: () => true,
 			},
-			isFranchisee: {
+			customerId: {
+				type: FieldTypes.String,
+				validate: () => true,
+			},
+			customerObject: {
 				type: FieldTypes.Object,
 				validate: () => true,
 			},

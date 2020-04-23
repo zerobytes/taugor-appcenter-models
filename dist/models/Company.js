@@ -210,7 +210,13 @@ function (_ModelBase) {
           return true;
         }
       },
-      isFranchisee: {
+      customerId: {
+        type: FieldTypes.String,
+        validate: function validate() {
+          return true;
+        }
+      },
+      customerObject: {
         type: FieldTypes.Object,
         validate: function validate() {
           return true;
