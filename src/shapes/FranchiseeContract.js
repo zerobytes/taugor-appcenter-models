@@ -9,10 +9,26 @@ class FranchiseeContract extends ShapeBase {
 		super(data);
 
 		this.$fieldConfig = {
-			monthlyMinimum: {
+			fixedMonthlyRoyalities: {
+				//Fixo mensal
 				type: FieldTypes.Float,
 				validate: () => true,
 			},
+			marketingTax: {
+				//Taxa de marketing
+				type: FieldTypes.Float,
+				validate: () => true,
+			},
+			marketingDueDate: { type: FieldTypes.Datetime, validate: () => true }, // DATA  VENCIMENTO DO ROYALTY
+			variableMonthlyRoayltiesPercent: {
+				//Royalties variáveis
+				type: FieldTypes.Float,
+				validate: () => true,
+			},
+			royaltiesDueDate: { type: FieldTypes.Datetime, validate: () => true }, // DATA  VENCIMENTO DO ROYALTY
+			variableRoyaltiesDueDate: { type: FieldTypes.Datetime, validate: () => true }, // DATA  VENCIMENTO DO ROYALTY
+			//daysUntilFirstWarning: RELATED WITH CANCELATION AFTER BLOCKED STATUS
+			//daysUntilContractReview: RELATED WITH CANCELATION AFTER BLOCKED STATUS
 			startedAt: {
 				type: FieldTypes.Datetime,
 				validate: () => true,
@@ -26,18 +42,33 @@ class FranchiseeContract extends ShapeBase {
 				validate: () => true,
 			},
 			status: {
+				//active
+				//overdue
+				//suspended
+				//blocked-franchisee-overdue
+				//blocked-franchisee-non-compliance
+				//blocked-franchisor-decision
+				//canceled
 				type: FieldTypes.String,
 				validate: () => true,
 			},
 			history: {
-				type: [],
+				//Need to specify TICKET NUMBER and a REASON
+				type: FieldTypes.Array,
 				validate: () => true,
 			},
 			geographicRegions: {
+				//
 				type: FieldTypes.Object,
 				validate: () => true,
 			},
+			//OCTADESK realizar INTEGRAÇÃO COM API
+
+			isUsingOwnBrand: { type: FieldTypes.Boolean, validate: () => true },
+			//Percentual de repasse para o franqueado
+			onlineSalesFranchiseePercent: { type: FieldTypes.Float, validate: () => true },
 			onlineSalesStatus: {
+				//
 				type: FieldTypes.String,
 				validate: () => true,
 			},

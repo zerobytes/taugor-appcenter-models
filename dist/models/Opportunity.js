@@ -21,142 +21,99 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 var omj = require('@zerobytes/object-model-js');
 
-var User = require('../models/User')["default"];
-
+var ModelBase = omj.ModelBase;
 var FieldTypes = omj.FieldTypes;
 var validator = omj.Validator;
-var ShapeBase = omj.ShapeBase;
 
-var FranchiseeContract =
+var Opportunity =
 /*#__PURE__*/
-function (_ShapeBase) {
-  _inherits(FranchiseeContract, _ShapeBase);
+function (_ModelBase) {
+  _inherits(Opportunity, _ModelBase);
 
-  function FranchiseeContract() {
+  function Opportunity() {
     var _this;
 
-    var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+    var properties = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
 
-    _classCallCheck(this, FranchiseeContract);
+    _classCallCheck(this, Opportunity);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(FranchiseeContract).call(this, data));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Opportunity).call(this, 'opportunity'));
     _this.$fieldConfig = {
-      fixedMonthlyRoyalities: {
-        //Fixo mensal
-        type: FieldTypes.Float,
-        validate: function validate() {
-          return true;
-        }
-      },
-      marketingTax: {
-        //Taxa de marketing
-        type: FieldTypes.Float,
-        validate: function validate() {
-          return true;
-        }
-      },
-      marketingDueDate: {
-        type: FieldTypes.Datetime,
-        validate: function validate() {
-          return true;
-        }
-      },
-      // DATA  VENCIMENTO DO ROYALTY
-      variableMonthlyRoayltiesPercent: {
-        //Royalties variáveis
-        type: FieldTypes.Float,
-        validate: function validate() {
-          return true;
-        }
-      },
-      royaltiesDueDate: {
-        type: FieldTypes.Datetime,
-        validate: function validate() {
-          return true;
-        }
-      },
-      // DATA  VENCIMENTO DO ROYALTY
-      variableRoyaltiesDueDate: {
-        type: FieldTypes.Datetime,
-        validate: function validate() {
-          return true;
-        }
-      },
-      // DATA  VENCIMENTO DO ROYALTY
-      //daysUntilFirstWarning: RELATED WITH CANCELATION AFTER BLOCKED STATUS
-      //daysUntilContractReview: RELATED WITH CANCELATION AFTER BLOCKED STATUS
-      startedAt: {
-        type: FieldTypes.Datetime,
-        validate: function validate() {
-          return true;
-        }
-      },
-      expiresAt: {
-        type: FieldTypes.Datetime,
-        validate: function validate() {
-          return true;
-        }
-      },
-      endedAt: {
-        type: FieldTypes.Datetime,
-        validate: function validate() {
-          return true;
-        }
-      },
-      status: {
-        //active
-        //overdue
-        //suspended
-        //blocked-franchisee-overdue
-        //blocked-franchisee-non-compliance
-        //blocked-franchisor-decision
-        //canceled
+      company: {
         type: FieldTypes.String,
         validate: function validate() {
           return true;
         }
       },
-      history: {
-        //Need to specify TICKET NUMBER and a REASON
+      name: {
+        type: FieldTypes.String,
+        validate: function validate() {
+          return true;
+        }
+      },
+      description: {
+        type: FieldTypes.String,
+        validate: function validate() {
+          return true;
+        }
+      },
+      conversation: {
         type: FieldTypes.Array,
         validate: function validate() {
           return true;
         }
       },
-      geographicRegions: {
-        //
+      products: {
         type: FieldTypes.Object,
         validate: function validate() {
           return true;
         }
       },
-      //OCTADESK realizar INTEGRAÇÃO COM API
-      isUsingOwnBrand: {
-        type: FieldTypes.Boolean,
+      priority: {
+        type: FieldTypes.String,
         validate: function validate() {
           return true;
         }
       },
-      //Percentual de repasse para o franqueado
-      onlineSalesFranchiseePercent: {
-        type: FieldTypes.Float,
+      businessValue: {
+        type: FieldTypes.String,
         validate: function validate() {
           return true;
         }
       },
-      onlineSalesStatus: {
-        //
+      status: {
+        type: FieldTypes.String,
+        validate: function validate() {
+          return true;
+        }
+      },
+      contactOrigin: {
+        type: FieldTypes.String,
+        validate: function validate() {
+          return true;
+        }
+      },
+      prospect: {
+        type: FieldTypes.Object,
+        validate: function validate() {
+          return true;
+        }
+      },
+      identificationNumber: {
         type: FieldTypes.String,
         validate: function validate() {
           return true;
         }
       }
     };
+
+    _this.$fill(properties);
+
     return _this;
   }
 
-  return FranchiseeContract;
-}(ShapeBase);
+  return Opportunity;
+}(ModelBase);
 
-var _default = FranchiseeContract;
+var _default = Opportunity;
 exports["default"] = _default;
