@@ -52,6 +52,14 @@ class Opportunity extends ModelBase {
 				type: FieldTypes.String,
 				validate: () => true,
 			},
+			customer: {
+				type: FieldTypes.String,
+				validate: () => true,
+			},
+			expectationLevel: {
+				type: FieldTypes.String,
+				validate: () => true,
+			},
 		};
 
 		this.$fill(properties);

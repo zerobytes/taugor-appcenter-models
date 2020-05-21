@@ -25,19 +25,19 @@ var ModelBase = omj.ModelBase;
 var FieldTypes = omj.FieldTypes;
 var validator = omj.Validator;
 
-var Opportunity =
+var OpportunityDoc =
 /*#__PURE__*/
 function (_ModelBase) {
-  _inherits(Opportunity, _ModelBase);
+  _inherits(OpportunityDoc, _ModelBase);
 
-  function Opportunity() {
+  function OpportunityDoc() {
     var _this;
 
     var properties = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
 
-    _classCallCheck(this, Opportunity);
+    _classCallCheck(this, OpportunityDoc);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Opportunity).call(this, 'opportunity'));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(OpportunityDoc).call(this, 'opportunityDoc'));
     _this.$fieldConfig = {
       company: {
         type: FieldTypes.String,
@@ -45,74 +45,20 @@ function (_ModelBase) {
           return true;
         }
       },
-      name: {
+      type: {
         type: FieldTypes.String,
         validate: function validate() {
           return true;
         }
       },
-      description: {
+      opportunity: {
         type: FieldTypes.String,
         validate: function validate() {
           return true;
         }
       },
-      conversation: {
-        type: FieldTypes.Array,
-        validate: function validate() {
-          return true;
-        }
-      },
-      products: {
+      document: {
         type: FieldTypes.Object,
-        validate: function validate() {
-          return true;
-        }
-      },
-      priority: {
-        type: FieldTypes.String,
-        validate: function validate() {
-          return true;
-        }
-      },
-      businessValue: {
-        type: FieldTypes.String,
-        validate: function validate() {
-          return true;
-        }
-      },
-      status: {
-        type: FieldTypes.String,
-        validate: function validate() {
-          return true;
-        }
-      },
-      contactOrigin: {
-        type: FieldTypes.String,
-        validate: function validate() {
-          return true;
-        }
-      },
-      prospect: {
-        type: FieldTypes.Object,
-        validate: function validate() {
-          return true;
-        }
-      },
-      identificationNumber: {
-        type: FieldTypes.String,
-        validate: function validate() {
-          return true;
-        }
-      },
-      customer: {
-        type: FieldTypes.String,
-        validate: function validate() {
-          return true;
-        }
-      },
-      expectationLevel: {
-        type: FieldTypes.String,
         validate: function validate() {
           return true;
         }
@@ -124,8 +70,8 @@ function (_ModelBase) {
     return _this;
   }
 
-  return Opportunity;
+  return OpportunityDoc;
 }(ModelBase);
 
-var _default = Opportunity;
+var _default = OpportunityDoc;
 exports["default"] = _default;
