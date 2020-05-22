@@ -8,6 +8,10 @@ class Opportunity extends ModelBase {
 		super('opportunity');
 
 		this.$fieldConfig = {
+			incremental: {
+				type: FieldTypes.String,
+				validate: () => true,
+			},
 			company: {
 				type: FieldTypes.String,
 				validate: () => true,

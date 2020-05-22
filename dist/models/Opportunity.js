@@ -39,6 +39,12 @@ function (_ModelBase) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Opportunity).call(this, 'opportunity'));
     _this.$fieldConfig = {
+      incremental: {
+        type: FieldTypes.String,
+        validate: function validate() {
+          return true;
+        }
+      },
       company: {
         type: FieldTypes.String,
         validate: function validate() {
