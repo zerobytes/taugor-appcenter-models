@@ -9,6 +9,8 @@ export { default as User } from './models/User';
 export { default as Franchisee } from './models/Franchisee';
 export { default as Customer } from './models/Customer';
 export { default as License } from './models/License';
+export { default as Opportunity } from './models/Opportunity';
+export { default as OpportunityDoc } from './models/OpportunityDoc';
 
 export {
 	appReference,
@@ -22,5 +24,5 @@ export {
 	FranchiseeInformation,
 	FranchiseeManagingPartner,
 	PagarmePhoneNumber,
-	PagarmeAddress
+	PagarmeAddress,
 } from './shapes';

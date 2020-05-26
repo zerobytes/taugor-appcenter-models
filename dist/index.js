@@ -63,6 +63,18 @@ Object.defineProperty(exports, "License", {
     return _License["default"];
   }
 });
+Object.defineProperty(exports, "Opportunity", {
+  enumerable: true,
+  get: function get() {
+    return _Opportunity["default"];
+  }
+});
+Object.defineProperty(exports, "OpportunityDoc", {
+  enumerable: true,
+  get: function get() {
+    return _OpportunityDoc["default"];
+  }
+});
 Object.defineProperty(exports, "appReference", {
   enumerable: true,
   get: function get() {
@@ -155,6 +167,10 @@ var _Franchisee = _interopRequireDefault(require("./models/Franchisee"));
 var _Customer = _interopRequireDefault(require("./models/Customer"));
 
 var _License = _interopRequireDefault(require("./models/License"));
+
+var _Opportunity = _interopRequireDefault(require("./models/Opportunity"));
+
+var _OpportunityDoc = _interopRequireDefault(require("./models/OpportunityDoc"));
 
 var _shapes = require("./shapes");
 
