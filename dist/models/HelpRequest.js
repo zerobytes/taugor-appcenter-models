@@ -66,6 +66,16 @@ function (_ModelBase) {
       validate: function validate() {
         return true;
       }
+    }), _defineProperty(_this$$fieldConfig, "responsible", {
+      type: FieldTypes.Object,
+      validate: function validate() {
+        return true;
+      }
+    }), _defineProperty(_this$$fieldConfig, "lastMessage", {
+      type: FieldTypes.Object,
+      validate: function validate() {
+        return true;
+      }
     }), _defineProperty(_this$$fieldConfig, "finished", {
       type: FieldTypes.Boolean,
       validate: function validate() {

@@ -24,6 +24,14 @@ class HelpRequest extends ModelBase {
 				type: FieldTypes.String,
 				validate: () => true,
 			},
+			responsible: {
+				type: FieldTypes.Object,
+				validate: () => true,
+			},
+			lastMessage: {
+				type: FieldTypes.Object,
+				validate: () => true,
+			},
 			finished: {
 				type: FieldTypes.Boolean,
 				validate: () => true,
