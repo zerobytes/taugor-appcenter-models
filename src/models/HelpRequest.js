@@ -24,6 +24,10 @@ class HelpRequest extends ModelBase {
 				type: FieldTypes.String,
 				validate: () => true,
 			},
+			product: {
+				type: FieldTypes.String,
+				validate: () => true,
+			},
 			responsible: {
 				type: FieldTypes.Object,
 				validate: () => true,

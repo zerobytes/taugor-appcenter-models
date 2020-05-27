@@ -66,6 +66,11 @@ function (_ModelBase) {
       validate: function validate() {
         return true;
       }
+    }), _defineProperty(_this$$fieldConfig, "product", {
+      type: FieldTypes.String,
+      validate: function validate() {
+        return true;
+      }
     }), _defineProperty(_this$$fieldConfig, "responsible", {
       type: FieldTypes.Object,
       validate: function validate() {
