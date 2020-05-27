@@ -11,6 +11,7 @@ export { default as Customer } from './models/Customer';
 export { default as License } from './models/License';
 export { default as Opportunity } from './models/Opportunity';
 export { default as OpportunityDoc } from './models/OpportunityDoc';
+export { default as HelpRequest } from './models/HelpRequest';
 
 export {
 	appReference,
