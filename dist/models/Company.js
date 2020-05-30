@@ -104,6 +104,12 @@ function (_ModelBase) {
           return validator(_assertThisInitialized(_this), 'description').isOfType().minLength().isValid();
         }
       },
+      status: {
+        type: FieldTypes.String,
+        validate: function validate() {
+          return true;
+        }
+      },
       address: {
         type: FieldTypes.String,
         minLengh: 10,
@@ -204,6 +210,12 @@ function (_ModelBase) {
           return true;
         }
       },
+      hasShownInterestIn: {
+        type: FieldTypes.Object,
+        validate: function validate() {
+          return true;
+        }
+      },
       receiverId: {
         type: FieldTypes.String,
         validate: function validate() {
@@ -236,6 +248,12 @@ function (_ModelBase) {
       },
       franchiseeContract: {
         type: FieldTypes.ShapedAs(shapes.FranchiseeContract),
+        validate: function validate() {
+          return true;
+        }
+      },
+      meta: {
+        type: FieldTypes.Object,
         validate: function validate() {
           return true;
         }

@@ -70,6 +70,10 @@ class Company extends ModelBase {
 				minLength: 10,
 				validate: () => validator(this, 'description').isOfType().minLength().isValid(),
 			},
+			status: {
+				type: FieldTypes.String,
+				validate: () => true,
+			},
 			address: {
 				type: FieldTypes.String,
 				minLengh: 10,
@@ -157,6 +161,10 @@ class Company extends ModelBase {
 				defaultValue: [],
 				validate: () => true,
 			},
+			hasShownInterestIn: {
+				type: FieldTypes.Object,
+				validate: () => true,
+			},
 			receiverId: {
 				type: FieldTypes.String,
 				validate: () => true,
@@ -179,6 +187,10 @@ class Company extends ModelBase {
 			},
 			franchiseeContract: {
 				type: FieldTypes.ShapedAs(shapes.FranchiseeContract),
+				validate: () => true,
+			},
+			meta: {
+				type: FieldTypes.Object,
 				validate: () => true,
 			},
 		};
