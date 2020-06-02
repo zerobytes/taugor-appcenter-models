@@ -194,6 +194,13 @@ function (_ModelBase) {
         validate: function validate() {
           return true;
         }
+      },
+      kpis: {
+        type: FieldTypes.Object,
+        defaultValue: {},
+        validate: function validate() {
+          return true;
+        }
       }
     };
 
