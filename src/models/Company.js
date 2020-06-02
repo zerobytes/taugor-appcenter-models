@@ -134,6 +134,18 @@ class Company extends ModelBase {
 				defaultValue: new shapes.demoMode({ active: false }),
 				validate: () => true,
 			},
+			franchisee: {
+				type: FieldTypes.String,
+				validate: () => true,
+			},
+			accountEngineer: {
+				type: FieldTypes.String,
+				validate: () => true,
+			},
+			salesman: {
+				type: FieldTypes.String,
+				validate: () => true,
+			},
 			owner: {
 				type: FieldTypes.IdOf(User),
 				validate: () => validator(this, 'owner').isOfType().isValid(),
@@ -187,6 +199,14 @@ class Company extends ModelBase {
 			},
 			franchiseeContract: {
 				type: FieldTypes.ShapedAs(shapes.FranchiseeContract),
+				validate: () => true,
+			},
+			franchiseeCourses: {
+				type: FieldTypes.Object,
+				validate: () => true,
+			},
+			franchiseePerformance: {
+				type: FieldTypes.Object,
 				validate: () => true,
 			},
 			meta: {

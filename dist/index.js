@@ -81,6 +81,12 @@ Object.defineProperty(exports, "HelpRequest", {
     return _HelpRequest["default"];
   }
 });
+Object.defineProperty(exports, "Campaign", {
+  enumerable: true,
+  get: function get() {
+    return _Campaign["default"];
+  }
+});
 Object.defineProperty(exports, "appReference", {
   enumerable: true,
   get: function get() {
@@ -179,6 +185,8 @@ var _Opportunity = _interopRequireDefault(require("./models/Opportunity"));
 var _OpportunityDoc = _interopRequireDefault(require("./models/OpportunityDoc"));
 
 var _HelpRequest = _interopRequireDefault(require("./models/HelpRequest"));
+
+var _Campaign = _interopRequireDefault(require("./models/Campaign"));
 
 var _shapes = require("./shapes");
 

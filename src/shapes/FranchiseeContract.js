@@ -72,6 +72,11 @@ class FranchiseeContract extends ShapeBase {
 				type: FieldTypes.String,
 				validate: () => true,
 			},
+			//Products that the franchisee is allowed to sell
+			productsAllowedToSell: {
+				type: FieldTypes.Object,
+				validate: () => true,
+			},
 		};
 	}
 }

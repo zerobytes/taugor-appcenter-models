@@ -12,6 +12,7 @@ export { default as License } from './models/License';
 export { default as Opportunity } from './models/Opportunity';
 export { default as OpportunityDoc } from './models/OpportunityDoc';
 export { default as HelpRequest } from './models/HelpRequest';
+export { default as Campaign } from './models/Campaign';
 
 export {
 	appReference,

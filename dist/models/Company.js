@@ -171,6 +171,24 @@ function (_ModelBase) {
           return true;
         }
       },
+      franchisee: {
+        type: FieldTypes.String,
+        validate: function validate() {
+          return true;
+        }
+      },
+      accountEngineer: {
+        type: FieldTypes.String,
+        validate: function validate() {
+          return true;
+        }
+      },
+      salesman: {
+        type: FieldTypes.String,
+        validate: function validate() {
+          return true;
+        }
+      },
       owner: {
         type: FieldTypes.IdOf(User),
         validate: function validate() {
@@ -248,6 +266,18 @@ function (_ModelBase) {
       },
       franchiseeContract: {
         type: FieldTypes.ShapedAs(shapes.FranchiseeContract),
+        validate: function validate() {
+          return true;
+        }
+      },
+      franchiseeCourses: {
+        type: FieldTypes.Object,
+        validate: function validate() {
+          return true;
+        }
+      },
+      franchiseePerformance: {
+        type: FieldTypes.Object,
         validate: function validate() {
           return true;
         }
