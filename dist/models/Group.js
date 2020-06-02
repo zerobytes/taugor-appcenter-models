@@ -75,34 +75,27 @@ function (_ModelBase) {
         defaultValue: [],
         validate: function validate() {
           return true;
-        } // validator(this, 'tag')
-        // 	.isOfType()
-        // 	.notEmpty()
-        // 	.notNull()
-        // 	.isValid()
-
+        }
       },
       members: {
         type: FieldTypes.ArrayOf(FieldTypes.IdOf(User)),
         defaultValue: [],
         validate: function validate() {
           return true;
-        } // validator(this, 'members')
-        // 	.isOfType()
-        // 	.isValid()
-
+        }
       },
       permissions: {
         type: FieldTypes.ArrayOf(FieldTypes.IdOf(Permission)),
-        //TODO: implement final saving format
-        // transform: (model, value) => value.map((item) => new PermissionReference(item)),
         defaultValue: [],
         validate: function validate() {
           return true;
-        } // validator(this, 'permissions')
-        // 	.isOfType()
-        // 	.isValid()
-
+        }
+      },
+      isSalesmanGroup: {
+        type: FieldTypes.Boolean,
+        validate: function validate() {
+          return true;
+        }
       },
       company: {
         type: FieldTypes.IdOf(Company),
