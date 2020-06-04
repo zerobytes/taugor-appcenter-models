@@ -30,28 +30,6 @@ var Group = require('./Group')["default"],
     User = require('./User')["default"];
 
 var shapes = require('../shapes');
-/**
- * @type Company
- * @property {string} name
- * @property {string} code
- * @property {string} description
- * @property {string} identificationNumber
- * @property {string} address
- * @property {string} primaryPhone
- * @property {string} secondaryPhone
- * @property {string} primaryEmail
- * @property {string} secondaryEmail
- * @property {string} website
- * @property {string} owner
- * @property {array}  contacts
- * @property {object} billing
- * @property {string} parent
- * @property {array} groups
- * @property {array} apps
- * @property {string} createdBy
- * @property {date} creationDate
- */
-
 
 var Company =
 /*#__PURE__*/
