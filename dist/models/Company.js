@@ -167,6 +167,12 @@ function (_ModelBase) {
           return true;
         }
       },
+      campaign: {
+        type: FieldTypes.String,
+        validate: function validate() {
+          return true;
+        }
+      },
       owner: {
         type: FieldTypes.IdOf(User),
         validate: function validate() {

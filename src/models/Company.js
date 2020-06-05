@@ -125,6 +125,10 @@ class Company extends ModelBase {
 				type: FieldTypes.String,
 				validate: () => true,
 			},
+			campaign: {
+				type: FieldTypes.String,
+				validate: () => true,
+			},
 			owner: {
 				type: FieldTypes.IdOf(User),
 				validate: () => validator(this, 'owner').isOfType().isValid(),
